@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>登 录</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="logo">
+    <img src="../../../assets/icon/favicon.png" alt="logo" >
+  </div>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="qf-login">
+    <ion-list>
+      <ion-item>
+        <ion-input type="text" placeholder="用户名" formControlName="username" required autocomplete="off"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="password" placeholder="密码" formControlName="password" required autocomplete="off"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button class="submit" expand="block" type="submit" [disabled]="loginForm.invalid">登 录</ion-button>
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="findPassword()" expand="block" fill="clear" shape="round">找回密码?</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button routerLink="/register" expand="block" fill="clear" shape="round">注册新用户</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+
+</ion-content>

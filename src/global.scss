@@ -24,3 +24,6 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+/* 导入自己定义的全局样式*/
+@import "./theme/light.scss";

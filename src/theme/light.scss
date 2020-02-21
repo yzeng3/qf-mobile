@@ -1,0 +1,63 @@
+.ios {
+    ion-header {
+        --background: #fff;
+    }
+
+    ion-content {
+        --background: #e5e6e8;
+    }
+
+    ion-textarea {
+        --background: #fff;
+    }
+
+    ion-input {
+        --background: #fff;
+    }
+
+    ion-toolbar {
+        --background: rgb(243, 10, 165);
+        --ion-text-color: #fff;
+    }
+
+    ion-tab-bar {
+        --background: #f8f8f8;
+    }
+
+    --ion-background-color: #fff;
+    --ion-text-color: #000;
+    --ion-border-color: #e5e6e8;
+    --ion-item-background: #fff;
+}
+
+.md {
+    ion-content {
+        --background: #e5e6e8;
+    }
+
+    ion-textarea {
+        --background: #ffffff;
+    }
+
+    ion-input {
+        --background: #fff;
+    }
+
+    ion-toolbar {
+        --background: rgb(243, 10, 165);
+        --ion-text-color: #fff;
+    }
+
+    ion-tab-bar {
+        --background: #f8f8f8;
+    }
+
+    --ion-background-color: #fff;
+    --ion-text-color: #000;
+    --ion-border-color: #e5e6e8;
+    --ion-item-background: #fff;
+}
+
+ion-title.title-large {
+    --color: black;
+}
