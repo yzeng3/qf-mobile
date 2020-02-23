@@ -12,4 +12,14 @@ export class HomePage implements OnInit {
   ngOnInit() {
   }
 
+  // 进去搜索页面
+  toSearch() {
+    console.log('search for it.');
+  }
+
+  // 切换segment
+  segmentChanged(ev: any) {
+    console.log('Segment changed', ev);
+  }
+
 }

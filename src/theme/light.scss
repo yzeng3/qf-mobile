@@ -1,6 +1,6 @@
 .ios {
     ion-header {
-        --background: #fff;
+        background: rgb(243, 10, 165);
     }
 
     ion-content {
@@ -31,6 +31,10 @@
 }
 
 .md {
+    ion-header {
+        background: rgb(243, 10, 165);
+    }
+
     ion-content {
         --background: #e5e6e8;
     }

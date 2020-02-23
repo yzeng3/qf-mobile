@@ -1,9 +1,136 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>我的</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <ion-list class="user-first" style="border-radius: 0 0 5px 5px;">
+    <ion-item lines="none" style="padding-top: 20px;">
+      <ion-avatar>
+        <img src="../../../assets/avatar/programmer.svg" />
+      </ion-avatar>
+      <ion-label style="margin-left: 1em;">{{nickname}}</ion-label>
+      <ion-button (click)="setting()" expand="block" fill="clear" shape="round">
+        <ion-icon name="settings-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="message()" expand="block" fill="clear" shape="round">
+        <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-tab-button tab="design">
+        <ion-label color="light">{{attention.productNum}}</ion-label>
+        <ion-label color="light">商品关注</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="design">
+        <ion-label color="light">{{attention.supplierNum}}</ion-label>
+        <ion-label color="light">店铺关注</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="design">
+        <ion-label color="light">{{attention.designNum}}</ion-label>
+        <ion-label color="light">喜欢的设计</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="design">
+        <ion-label color="light">{{attention.browse}}</ion-label>
+        <ion-label color="light">浏览历史</ion-label>
+      </ion-tab-button>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-card class="level">
+        <ion-card-content>奇服plus会员 | 优享定制</ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+  <ion-list class="qf-list order">
+    <ion-item>
+      <ion-label>我的订单</ion-label>
+      <ion-button (click)="viewOrder()" expand="block" fill="clear" shape="round" color="medium">
+        查看所有订单>
+      </ion-button>
+    </ion-item>
+    <ion-item class="options" lines="none">
+      <ion-tab-button tab="design">
+        <ion-icon name="folder-outline"></ion-icon>
+        <ion-label color="medium">待付款</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="design">
+        <ion-icon name="folder-open-outline"></ion-icon>
+        <ion-label color="medium">已付款</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="design">
+        <ion-icon name="bus-outline"></ion-icon>
+        <ion-label color="medium">待收货</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="design">
+        <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+        <ion-label color="medium">评价</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="design">
+        <ion-icon name="american-football-outline"></ion-icon>
+        <ion-label color="medium">退款/售后</ion-label>
+      </ion-tab-button>
+    </ion-item>
+    <ion-card class="logistics">
+      <ion-card-content>
+        <ion-label style="padding-left: 13px;">最新物流</ion-label>
+        <ion-item class="logisticsInfo">
+          <ion-img [src]="logisticsInfo.src"></ion-img>
+          <ion-list>
+            <ion-label color="primary">{{logisticsInfo.status}}</ion-label>
+            <ion-label>离开[{{logisticsInfo.curStation}}]，下一站[{{logisticsInfo.nextStation}}]</ion-label>
+          </ion-list>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+  <ion-list class="qf-list design">
+    <ion-item>
+      <ion-label>我的设计</ion-label>
+      <ion-button (click)="viewOrder()" expand="block" fill="clear" shape="round" color="medium">
+        查看所有设计>
+      </ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-tab-button tab="design">
+        <ion-icon name="create-outline"></ion-icon>
+        <ion-label color="medium">待发布</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="design">
+        <ion-icon name="browsers-outline"></ion-icon>
+        <ion-label color="medium">已发布</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="design">
+        <ion-icon name="swap-horizontal-outline"></ion-icon>
+        <ion-label color="medium">被受理</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="design">
+        <ion-icon name="trash-bin-outline"></ion-icon>
+        <ion-label color="medium">已过期</ion-label>
+      </ion-tab-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-list class="qf-list service">
+    <ion-item>
+      <ion-label>工具与服务</ion-label>
+      <ion-button (click)="viewOrder()" expand="block" fill="clear" shape="round" color="medium">
+        查看所有>
+      </ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-tab-button tab="design">
+        <ion-icon name="create-outline"></ion-icon>
+        <ion-label color="medium">客户服务</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="design">
+        <ion-icon name="browsers-outline"></ion-icon>
+        <ion-label color="medium">寄件服务</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="design">
+        <ion-icon name="swap-horizontal-outline"></ion-icon>
+        <ion-label color="medium">主题换肤</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="design">
+        <ion-icon name="trash-bin-outline"></ion-icon>
+        <ion-label color="medium">我的拼购</ion-label>
+      </ion-tab-button>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

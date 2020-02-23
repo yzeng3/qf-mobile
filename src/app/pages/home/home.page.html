@@ -1,9 +1,45 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>home</ion-title>
-  </ion-toolbar>
+  <ion-item class="header" lines="none">
+    <ion-button (click)="scan()" expand="block" fill="clear" shape="round">
+      <ion-icon name="scan-outline"></ion-icon>
+    </ion-button>
+    <ion-input type="text" class="toSearch" (click)="toSearch()" readonly>
+      <ion-icon name="search-outline"></ion-icon> 奇服搜索
+    </ion-input>
+    <ion-button (click)="onClick()" expand="block" fill="clear" shape="round">
+      <ion-icon name="camera-outline"></ion-icon>
+    </ion-button>
+  </ion-item>
+  <ion-segment (ionChange)="segmentChanged($event)" value="home" lines="none" class="segment">
+    <ion-segment-button value="home">
+      <ion-label>首页</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="woman">
+      <ion-label>女装</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="man">
+      <ion-label>男装</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="child">
+      <ion-label>童装</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="strange">
+      <ion-label>奇装</ion-label>
+    </ion-segment-button>
+  </ion-segment>
 </ion-header>
-
 <ion-content>
+    <ion-slides mode="ios" pager="ios" scrollbar="ios" class="slide">
+      <ion-slide>
+        <ion-img src="../../../assets/slide/slide3.jpg" style="height: 80px; width: 100%;"></ion-img>
+      </ion-slide>
+      <ion-slide>
+        <ion-img src="../../../assets/slide/slide1.png" style="height: 80px; width: 100%;"></ion-img>
+      </ion-slide>
+      <ion-slide>
+        <ion-img src="../../../assets/slide/slide2.png" style="height: 80px; width: 100%;"></ion-img>
+      </ion-slide>
+    </ion-slides>
+
 
 </ion-content>

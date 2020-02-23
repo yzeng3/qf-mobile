@@ -22,7 +22,6 @@ export class ToastService {
     }
 
     public async presentToastWithOptions(header?: string, message?: string, position?: 'top' | 'bottom' | 'middle') {
-
         const toast = await this.toastController.create({
             header: header || 'Toast header',
             message: message || 'Click to Close',
