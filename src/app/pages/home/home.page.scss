@@ -33,14 +33,41 @@
 }
 
 .slide {
-    padding: 15px 8px 0px 8px;
+    padding: 10px 10px 0px 10px;
 }
 
-// .slide ion-slides{
-//     --padding-start:0;
-//     --inner-padding-end:0;
-// }
+.slide ion-img{
+    height: 120px; 
+    width: 100%;
+}
 
+.content2 {
+    padding: 0 0;
+    background-color:#e5e6e8;
+}
+
+.content2 ion-item{
+    padding-top: 3px;
+    --background:#e5e6e8;
+}
+
+.content3{
+    padding: 0 0;
+    background-color:#e5e6e8;
+}
+.content3 ion-item{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.like{
+    padding-top: 7px;
+    --border-radius: 10px 10px 0 0;
+}
+
+.wholesale{
+    --border-radius: 0 0 10px 10px;
+}
 /********** md *************/
 .md {
 
