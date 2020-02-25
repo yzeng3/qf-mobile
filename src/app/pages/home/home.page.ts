@@ -13,7 +13,7 @@ export class HomePage implements OnInit {
   }
 
   // 进去搜索页面
-  toSearch() {
+  goSearch() {
     console.log('search for it.');
   }
 

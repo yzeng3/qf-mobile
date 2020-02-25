@@ -1,9 +1,36 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>category</ion-title>
-  </ion-toolbar>
+  <ion-item class="header" lines="none">
+    <ion-button (click)="scan()" expand="block" fill="clear" shape="round">
+      <ion-icon name="scan-outline"></ion-icon>
+    </ion-button>
+    <ion-input type="text" class="goSearch" (click)="goSearch()" readonly>
+      <ion-icon name="search-outline"></ion-icon> 
+      <ion-label class="iplaceholder"> 奇服搜索</ion-label> 
+      <ion-icon name="camera-outline"></ion-icon>
+    </ion-input>
+    <ion-button (click)="goMessagePage()" expand="block" fill="clear" shape="round">
+      <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+    </ion-button>
+  </ion-item>
 </ion-header>
 
 <ion-content>
+  <div class="category_content">
+    <div class="category_left">
+      <ion-list class="category_list">
+        <ion-item *ngFor="let item of leftCategory" (click)="getRightData(item._id)">
+          {{item.title}}
+        </ion-item>
+      </ion-list>
+    </div>
 
+    <div class="category_right">
+      <ion-row>
+        <ion-col col-4 *ngFor="let item of rightCategory" (click)="pushProductPage(item._id)">
+          <img [src]="base_url + item.pic">
+          <p>{{item.title}}</p>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
 </ion-content>

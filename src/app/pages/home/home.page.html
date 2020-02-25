@@ -3,11 +3,13 @@
     <ion-button (click)="scan()" expand="block" fill="clear" shape="round">
       <ion-icon name="scan-outline"></ion-icon>
     </ion-button>
-    <ion-input type="text" class="toSearch" (click)="toSearch()" readonly>
-      <ion-icon name="search-outline"></ion-icon> 奇服搜索
-    </ion-input>
-    <ion-button (click)="onClick()" expand="block" fill="clear" shape="round">
+    <ion-input type="text" class="goSearch" (click)="goSearch()" readonly>
+      <ion-icon name="search-outline"></ion-icon> 
+      <ion-label class="iplaceholder"> 奇服搜索</ion-label> 
       <ion-icon name="camera-outline"></ion-icon>
+    </ion-input>
+    <ion-button (click)="goMessagePage()" expand="block" fill="clear" shape="round">
+      <ion-icon name="chatbox-ellipses-outline"></ion-icon>
     </ion-button>
   </ion-item>
   <ion-segment (ionChange)="segmentChanged($event)" value="home" lines="none" class="segment">

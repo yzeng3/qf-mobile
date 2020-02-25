@@ -16,7 +16,7 @@ export class HttpService {
   }
 
   // tslint:disable-next-line: ban-types
-  public get(url: string, params?: Object, options?: Object, successCallback?: Function): Observable<{}> {
+  public get(url: string, options?: Object, params?: Object): Observable<{}> {
     let httpParams = new HttpParams();
     if (params) {
       for (const key in params) {
