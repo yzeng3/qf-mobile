@@ -1,9 +1,128 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>cart</ion-title>
+    <ion-title>购物车</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-list class="product-list">
+    <ion-item class="supplier" lines="none">
+      <ion-checkbox color="danger"></ion-checkbox>
+      <ion-icon name="library-outline"></ion-icon>
+      <ion-label>美丽大方店铺 ></ion-label>
+      <ion-label class="coupons">领劵</ion-label>
+    </ion-item>
+    <ion-item class="product" lines="none">
+      <ion-checkbox color="danger"></ion-checkbox>
+      <ion-img src="../../../assets/product/00.jpg"></ion-img>
+      <ion-text color="primary" class="product-info">
+        这是商品名称这是商品名称这是商是商品名称这是商是商品名称这是商
+        <ion-select value="01" class="type">
+          <ion-label>Music</ion-label>
+          <ion-select-option value="01">Alice in Chains</ion-select-option>
+          <ion-select-option value="02">Green Day</ion-select-option>
+          <ion-select-option value="03">Nirvana</ion-select-option>
+          <ion-select-option value="04">Pearl Jam</ion-select-option>
+          <ion-select-option value="05">Smashing Pumpkins</ion-select-option>
+          <ion-select-option value="06">Soundgarden</ion-select-option>
+          <ion-select-option value="07">Stone Temple Pilots</ion-select-option>
+        </ion-select>
+        <div class="product-o">
+          <div class="product-price">¥ 100元</div>
+          <div class="product-num">
+            <div class="btn-left">-</div>
+            <div class="product-num">
+              <input type="text" readonly value="1" name="num" id="num">
+            </div>
+            <div class="btn-right">+</div>
+          </div>
+        </div>
+      </ion-text>
+    </ion-item>
+    <ion-item class="product" lines="none">
+      <ion-checkbox color="danger"></ion-checkbox>
+      <ion-img src="../../../assets/product/00.jpg"></ion-img>
+      <ion-text color="primary" class="product-info">
+        Checkboxes allow the selection of multiple options from a set of options. They appear as checked
+        <ion-select value="01" class="type">
+          <ion-label>Music</ion-label>
+          <ion-select-option value="01">Alice in Chains</ion-select-option>
+          <ion-select-option value="02">Green Day</ion-select-option>
+          <ion-select-option value="03">Nirvana</ion-select-option>
+          <ion-select-option value="04">Pearl Jam</ion-select-option>
+          <ion-select-option value="05">Smashing Pumpkins</ion-select-option>
+          <ion-select-option value="06">Soundgarden</ion-select-option>
+          <ion-select-option value="07">Stone Temple Pilots</ion-select-option>
+        </ion-select>
+        <div class="product-o">
+          <div class="product-price">¥ 100元</div>
+          <div class="product-num">
+            <div class="btn-left">-</div>
+            <div class="product-num">
+              <input type="text" readonly value="1" name="num" id="num">
+            </div>
+            <div class="btn-right">+</div>
+          </div>
+        </div>
+      </ion-text>
+    </ion-item>
+  </ion-list>
 
+  <ion-list class="product-list">
+    <ion-item class="supplier" lines="none">
+      <ion-checkbox color="danger"></ion-checkbox>
+      <ion-icon name="library-outline"></ion-icon>
+      <ion-label>善解人意店铺 ></ion-label>
+    </ion-item>
+    <ion-item class="product" lines="none">
+      <ion-checkbox color="danger"></ion-checkbox>
+      <ion-img src="../../../assets/product/00.jpg"></ion-img>
+      <ion-text color="primary" class="product-info">
+        这是商品名称这是商品名称这是商是商品名称这是商是商品名称这是商
+        <div class="product-o">
+          <div class="product-price">¥ 100元</div>
+          <div class="product-num">
+            <div class="btn-left">-</div>
+            <div class="product-num">
+              <input type="text" readonly value="1" name="num" id="num">
+            </div>
+            <div class="btn-right">+</div>
+          </div>
+        </div>
+      </ion-text>
+    </ion-item>
+  </ion-list>
+
+  <ion-list class="product-list">
+    <ion-item class="supplier" lines="none">
+      <ion-checkbox color="danger"></ion-checkbox>
+      <ion-icon name="library-outline"></ion-icon>
+      <ion-label>善解人意店铺 ></ion-label>
+    </ion-item>
+    <ion-item class="product" lines="none">
+      <ion-checkbox color="danger"></ion-checkbox>
+      <ion-img src="../../../assets/product/00.jpg"></ion-img>
+      <ion-text color="primary" class="product-info">
+        这是商品名称这是商品名称这是商是商品名称这是商是商品名称这是商
+        <div class="product-o">
+          <div class="product-price">¥ 100元</div>
+          <div class="product-num">
+            <div class="btn-left">-</div>
+            <div class="product-num">
+              <input type="text" readonly value="1" name="num" id="num">
+            </div>
+            <div class="btn-right">+</div>
+          </div>
+        </div>
+      </ion-text>
+    </ion-item>
+  </ion-list>
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <div class="all_price">
+      <ion-checkbox color="danger"></ion-checkbox>
+      全选 <strong>合计:2000元</strong>
+    </div>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,112 @@
+/*************** 产品列表 *****************/
+.product-list {
+    padding: 0 0;
+    margin: 10px 10px;
+    border-radius: 10px;
+
+    .supplier {
+        ion-checkbox {
+            --border-color: rgb(206, 201, 201);
+        }
+
+        ion-icon {
+            color: rgb(141, 139, 139);
+            padding-right: 0.5em;
+            height: 18px;
+            width: 18px;
+        }
+
+        ion-label {
+            color: rgb(65, 60, 60);
+            font-size: 0.9rem;
+        }
+    }
+
+    .product {
+
+        // --background: #e5e6e8;
+        ion-checkbox {
+            --border-color: rgb(206, 201, 201);
+            // width: 30px;
+            // height: 17px;
+        }
+
+        ion-img {
+            width: 100px;
+            height: 100px;
+            margin: 5px 10px 5px 8px;
+        }
+
+        .product-info {
+            width: 70%;
+            color: rgb(65, 60, 60);
+            font-size: 0.8rem;
+            padding: 10px 0 10px 10px;
+
+            .type {
+                background-color: #e5e6e8;
+                border-radius: 3px;
+                margin: 8px 0px;
+                --padding-top: 2px;
+                --padding-end: 0;
+                --padding-bottom: 2px;
+                --padding-start: 2px;
+            }
+
+            //底部的价格和增加按钮
+            .product-o {
+                display: flex;
+
+                .product-price {
+                    flex: 1;
+                    color: rgb(228, 73, 34);
+                }
+
+                .product-num {
+                    width: 50px;
+                    font-size: larger;
+                    margin-right: 10px;
+                    display: flex;
+
+                    .btn-left,
+                    .btn-right {
+                        text-align: center;
+                    }
+
+                    .product-num {
+                        flex: 1;
+
+                        input {
+                            width: 100%;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 底部
+.all_price {
+    height: 2em;
+
+    ion-checkbox {
+        position: relative;
+    }
+}
+
+.md {
+    ion-checkbox {
+        --border-radius: 50%;
+        margin-right: 10px;
+    }
+}
+
+.ios {
+    ion-checkbox {
+        width: 16px;
+        height: 16px;
+        margin-right: 10px;
+    }
+}

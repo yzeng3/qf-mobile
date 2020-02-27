@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { CategoryService } from 'src/app/services/category/category.service';
+import { Config } from 'src/app/data/config';
 
 @Component({
   selector: 'app-category',
@@ -9,42 +10,59 @@ import { CategoryService } from 'src/app/services/category/category.service';
 })
 export class CategoryPage implements OnInit {
 
-  public leftCategory = []; // 左侧分类数据
-  public rightCategory = []; // 右侧分类数据
-  public base_url = 'http://jd.itying.com/';
+  public categoryList = []; // 左侧分类数据
+  public categoryData = []; // 右侧分类数据
+  public titles = [['热门店铺', '特卖', '热门设计'], ['上装', '下装', '裙子', '特色装'], ['上装', '下装'], ['鞋', '包'], ['全部']];
+  public subtitle = this.titles[4];
+  public subtitleLenth = 1;
 
   constructor(
-    public navCtrl: NavController,
-    public category: CategoryService
+    private navCtrl: NavController,
+    private category: CategoryService,
+    private config: Config
   ) { }
 
   ngOnInit() {
     // 左侧分类数据
-    this.getLeftData();
+    this.getCategoryList();
+  }
+
+  // 切换右侧小标题
+  switchSubtitle(productId: any) {
+    if (productId === 11) {           // 推荐分类, 载入第一种小标题
+      this.subtitle = this.titles[0];
+    } else if (productId === 13) {    // 女装分类
+      this.subtitle = this.titles[1];
+    } else if (productId === 16) {    // 鞋包分类
+      this.subtitle = this.titles[3];
+    } else if (productId === 18) {    // 饰品分类
+      this.subtitle = this.titles[4];
+    } else {
+      this.subtitle = this.titles[2];
+    }
   }
 
   // 左侧分类的数据
-  getLeftData() {
-    this.category.requestLeftData(
+  getCategoryList() {
+    this.category.requestCategoryList('api/getCategoryList',
       (res: any) => {
-        this.leftCategory = res;
-        // 调用右侧分类
-        this.getRightData(res[0]._id);
+        this.categoryList = res;
+        this.getCategoryData(res[2].product_id); // 右侧数据
       }
     );
   }
 
   // 左侧分类的数据
-  getRightData(pid: string) {
-    this.category.requestRightData('http://jd.itying.com/api/pcate?pid=' + pid,
+  getCategoryData(productId: any) {
+    this.category.requestCategoryData('api/getCategoryData?productId=' + productId,
       (res: any) => {
-        this.rightCategory = res;
+        this.categoryData = res;
+        this.switchSubtitle(productId);
       }
     );
   }
 
   // 跳转商品列表页面
-  pushProductPage(value) {
+  pushProductPage(value: any) {
   }
-
 }
