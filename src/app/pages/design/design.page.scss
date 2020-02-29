@@ -1,0 +1,16 @@
+ion-list{
+    background: #e5e6e8;
+
+    ion-item{
+        margin: 1.5em 6em 2em 6em;
+        padding: 0 0;
+        box-shadow: 5px 5px 5px #b0b4bd;
+        border-radius: 0.5em;
+        ion-label{
+            color: rgb(77, 72, 72);
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 3em;
+        }
+    }
+}

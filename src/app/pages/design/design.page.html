@@ -1,9 +1,13 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>design</ion-title>
+    <ion-title>选择</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-list>
+    <ion-item *ngFor="let item of category" lines="none" (click)="goModelPage(item.itemNo, item.itemName)">
+      <ion-label>{{item.itemName}}</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

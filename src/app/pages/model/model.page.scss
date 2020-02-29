@@ -1,0 +1,24 @@
+.type {
+    background: #e5e6e8;
+
+    ion-item {
+        margin: 1em 7em 2em 7em;
+        box-shadow: 2px 2px 10px #c0c4cc;
+        border-radius: 0.3em;
+    }
+
+    ion-img {
+        width: 8.5em;
+        height: 10em;
+    }
+
+    .model {
+        text-align: center;
+        margin: auto;
+        ion-label {
+            color: #454647;
+            font-size: 1.3rem;
+            font-family: cursive;
+        }
+    }
+}

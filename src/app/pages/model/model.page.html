@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{typeName}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let item of models">
+  <ion-list class="type" *ngIf="typeId == item.typeId" >
+    <ion-item lines="none" *ngFor="let model of item.child" (click)="goFactory(model.modelNo, model.modelName)">
+      <ion-list class="model">
+        <ion-label>{{model.modelName}}</ion-label>
+        <ion-img [src]="config.apiUrl + model.picture"></ion-img>
+      </ion-list>
+    </ion-item>
+  </ion-list>
+</div>
+</ion-content>
