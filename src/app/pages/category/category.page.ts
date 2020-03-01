@@ -27,7 +27,7 @@ export class CategoryPage implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     document.getElementById(this.curTitle).style.background = '#ffffff';
     document.getElementById(this.curTitle).style.color = '#000000';
-    document.getElementById(this.curTitle).style.fontSize = '0.1rem';
+    document.getElementById(this.curTitle).style.fontSize = '1rem';
     document.getElementById(this.curTitle).style.lineHeight = '3.2';
   }
   // 右侧数据变化

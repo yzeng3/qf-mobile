@@ -8,7 +8,6 @@ import { catchError } from 'rxjs/operators';
 })
 export class HttpService {
 
-  private baseUrl = 'http://localhost:8090/';
   private http: any;
 
   constructor(private Http: HttpClient) {

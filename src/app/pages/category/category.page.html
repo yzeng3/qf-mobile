@@ -24,24 +24,24 @@
       </ion-list>
     </div>
 
-    <div class="category_right" >
+    <div class="category_right">
       <div *ngFor="let title of categoryData;">
-      <div *ngIf="title.itemNo == curTitle">
-        <ion-list *ngFor="let sub of title.data;">
-          <ion-item lines="none">
-            <ion-label class="title">{{sub.subtitle}}</ion-label>
-          </ion-item>
-          <ion-item lines="none">
-            <div class="block">
-              <div *ngFor="let clothes of sub.detail">
-                <ion-img [src]="config.apiUrl+clothes.picture"></ion-img>
-                <ion-label>{{clothes.itemName}}</ion-label>
+        <div *ngIf="title.itemNo == curTitle">
+          <ion-list *ngFor="let sub of title.data;">
+            <ion-item lines="none">
+              <ion-label class="title">{{sub.subtitle}}</ion-label>
+            </ion-item>
+            <ion-item lines="none">
+              <div class="block">
+                <div *ngFor="let clothes of sub.detail">
+                  <ion-img [src]="config.apiUrl+clothes.picture"></ion-img>
+                  <ion-label>{{clothes.itemName}}</ion-label>
+                </div>
               </div>
-            </div>
-          </ion-item>
-        </ion-list>
+            </ion-item>
+          </ion-list>
+        </div>
       </div>
-    </div>
     </div>
   </div>
 </ion-content>

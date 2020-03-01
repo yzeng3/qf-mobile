@@ -11,7 +11,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginGuardGuard } from './guard/login-guard.guard';
 
-
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],

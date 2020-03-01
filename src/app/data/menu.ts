@@ -160,7 +160,7 @@ export class Menu {
                         { itemNo: '5', itemName: '卫裤', picture: 'public/clothes/man/bottom/nanz_weiku.jpg' },
                         { itemNo: '6', itemName: '西裤', picture: 'public/clothes/man/bottom/nanz_xiku.jpg' },
                         { itemNo: '7', itemName: '修身裤', picture: 'public/clothes/man/bottom/nanz_xiushenku.jpg' },
-                        { itemNo: '8', itemName: '休闲裤', picture: 'public/clothes/man/bottom/nanz_xixianku.jpg' },
+                        { itemNo: '8', itemName: '休闲裤', picture: 'public/clothes/man/bottom/nanz_xiuxianku.jpg' },
                         { itemNo: '9', itemName: '运动裤', picture: 'public/clothes/man/bottom/nanz_yundongku.jpg' }
                     ]
                 }

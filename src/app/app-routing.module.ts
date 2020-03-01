@@ -8,15 +8,19 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule)
   },
   {
     path: 'register',
-    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterPageModule)
   },
   {
     path: 'model/:typeId/:typeName',
-    loadChildren: () => import('./pages/model/model.module').then( m => m.ModelPageModule)
+    loadChildren: () => import('./pages/model/model.module').then(m => m.ModelPageModule)
+  },
+  {
+    path: 'factory/:typeId/:modelNo/:modelName',
+    loadChildren: () => import('./pages/factory/factory.module').then(m => m.FactoryPageModule)
   }
 ];
 @NgModule({
@@ -25,4 +29,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

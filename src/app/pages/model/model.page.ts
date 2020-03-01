@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Menu } from 'src/app/data/menu';
 import { Config } from 'src/app/data/config';
 
@@ -14,7 +14,7 @@ export class ModelPage implements OnInit {
   private typeName = '热门';
   private models = [];
 
-  constructor(activedRoute: ActivatedRoute, private config: Config) {
+  constructor(activedRoute: ActivatedRoute, private config: Config, private router: Router) {
     this.typeId = activedRoute.snapshot.params.typeId;  // 接收design页面的typeId
     this.typeName = activedRoute.snapshot.params.typeName; // 接收typeName
     this.models = Menu.models; // 初始化模型数据
@@ -25,6 +25,6 @@ export class ModelPage implements OnInit {
 
   // 进入设计工厂
   goFactory(modelNo: string, modelName: string) {
-    console.log(modelNo + modelName);
+    this.router.navigate(['factory', this.typeId, modelNo, modelName]);
   }
 }

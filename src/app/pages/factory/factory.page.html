@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>请开始您的表演-{{modelName}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item lines="none">
+      <ion-img [src]="config.apiUrl + factory[picture].front"></ion-img>
+    </ion-item>
+
+  </ion-list>
+
+
+</ion-content>
