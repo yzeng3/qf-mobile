@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { FactoryPageRoutingModule } from './factory-routing.module';
+import { ColorPageRoutingModule } from './color-routing.module';
 
-import { FactoryPage } from './factory.page';
+import { ColorPage } from './color.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FactoryPageRoutingModule
+    ColorPageRoutingModule
   ],
-  declarations: [FactoryPage]
+  declarations: [ColorPage]
 })
-export class FactoryPageModule { }
+export class ColorPageModule {}

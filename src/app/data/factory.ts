@@ -38,39 +38,39 @@ export class Factory {
             modelName: 'polo衫',
             factory: [
                 {
-                    _id: '1',
+                    _id: '0',
                     name: 'polo衫白', color: '#dcdef3', front: 'public/model/man/polo/baif.jpg', back: 'public/model/man/polo/baib.jpg'
                 },
                 {
-                    _id: '2',
-                    name: '', color: '#111112', front: 'public/model/man/polo/huif.jpg', back: 'public/model/man/polo/huib.jpg'
+                    _id: '1',
+                    name: '', color: '#111112', front: 'public/model/man/polo/heif.jpg', back: 'public/model/man/polo/heib.jpg'
                 },
                 {
-                    _id: '3',
+                    _id: '2',
                     name: '', color: '#ac0521', front: 'public/model/man/polo/hongf.jpg', back: 'public/model/man/polo/hongb.jpg'
                 },
                 {
-                    _id: '4',
+                    _id: '3',
                     name: '', color: '#d52668', front: 'public/model/man/polo/hongsf.jpg', back: 'public/model/man/polo/hongsb.jpg'
                 },
                 {
-                    _id: '5',
+                    _id: '4',
                     name: '', color: '#dacc6b', front: 'public/model/man/polo/huangf.jpg', back: 'public/model/man/polo/huangb.jpg'
                 },
                 {
-                    _id: '6',
+                    _id: '5',
                     name: '', color: '#237c62', front: 'public/model/man/polo/lanf.jpg', back: 'public/model/man/polo/lanb.jpg'
                 },
                 {
-                    _id: '7',
+                    _id: '6',
                     name: '', color: '#148043', front: 'public/model/man/polo/lvf.jpg', back: 'public/model/man/polo/lvb.jpg'
                 },
                 {
-                    _id: '8',
+                    _id: '7',
                     name: '', color: '#7eb54c', front: 'public/model/man/polo/lvsf.jpg', back: 'public/model/man/polo/lvsb.jpg'
                 },
                 {
-                    _id: '9',
+                    _id: '8',
                     name: '', color: '#3d1958', front: 'public/model/man/polo/zif.jpg', back: 'public/model/man/polo/zib.jpg'
                 },
             ]

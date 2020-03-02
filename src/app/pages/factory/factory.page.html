@@ -10,11 +10,55 @@
 <ion-content>
 
   <ion-list>
-    <ion-item lines="none">
-      <ion-img [src]="config.apiUrl + factory[picture].front"></ion-img>
+    <ion-item lines="none" class="item1">
+      <div class="image">
+        <ion-img id="img" [src]="config.apiUrl + imgUrl"></ion-img>
+      </div>
     </ion-item>
 
+    <ion-item class="item2" lines="none">
+      <ion-segment mode="ios" color="danger" value="front" (ionChange)="modelChanged($event)">
+        <ion-segment-button mode="ios" value="front">
+          <ion-label>正面</ion-label>
+        </ion-segment-button>
+        <ion-segment-button mode="ios" value="back">
+          <ion-label>背面</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-item>
+
+    <ion-item class="item3" lines="none">
+      <ion-tab-button (click)="setColor()">
+        <ion-icon src="../../../assets/icon/color.svg"></ion-icon>
+        <ion-label>颜色</ion-label>
+      </ion-tab-button>
+      <ion-tab-button>
+        <ion-icon src="../../../assets/icon/map.svg"></ion-icon>
+        <ion-label>贴图</ion-label>
+      </ion-tab-button>
+      <ion-tab-button>
+        <ion-icon src="../../../assets/icon/signature.svg"></ion-icon>
+        <ion-label>签名</ion-label>
+      </ion-tab-button>
+      <ion-tab-button>
+        <ion-icon src="../../../assets/icon/parameter.svg"></ion-icon>
+        <ion-label>更多设计</ion-label>
+      </ion-tab-button>
+      <ion-tab-button>
+        <ion-icon src="../../../assets/icon/praise.svg"></ion-icon>
+        <ion-label>实时评分</ion-label>
+      </ion-tab-button>
+    </ion-item>
   </ion-list>
-
-
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button (click)="cancel()" expand="block" fill="clear" shape="round" slot="start">
+      <ion-label>取消</ion-label>
+    </ion-button>
+    <ion-button (click)="save()" expand="block" fill="clear" shape="round" slot="end">
+      <ion-label>保存</ion-label>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
