@@ -11,16 +11,27 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginGuardGuard } from './guard/login-guard.guard';
 import { ColorPage } from './pages/color/color.page';
-import { MapDragDirective } from './directive/map-drag.directive';
-
+// import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+// export class MyHammerConfig extends HammerGestureConfig {
+//   overrides = {
+//     pan: { threshold: 5 },
+//     swipe: {
+//       velocity: 0.4,
+//       threshold: 20,
+//       direction: 31
+//     },
+//     press: {}
+//   } as any;
+// }
 @NgModule({
-  declarations: [AppComponent, ColorPage, MapDragDirective],
+  declarations: [AppComponent, ColorPage],
   entryComponents: [ColorPage],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    // { provide: HAMMER_GESTURE_CONFIG, useClass: MyHammerConfig },
     LoginGuardGuard
   ],
   bootstrap: [AppComponent]

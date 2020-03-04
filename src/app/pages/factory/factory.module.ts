@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { FactoryPageRoutingModule } from './factory-routing.module';
 
 import { FactoryPage } from './factory.page';
+import { MapDragDirective } from 'src/app/directive/map-drag.directive';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { FactoryPage } from './factory.page';
     IonicModule,
     FactoryPageRoutingModule
   ],
-  declarations: [FactoryPage]
+  declarations: [FactoryPage, MapDragDirective]
 })
 export class FactoryPageModule { }

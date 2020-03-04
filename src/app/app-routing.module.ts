@@ -22,10 +22,6 @@ const routes: Routes = [
     path: 'factory/:typeId/:modelNo/:modelName',
     loadChildren: () => import('./pages/factory/factory.module').then(m => m.FactoryPageModule)
   }
-  // {
-  //   path: 'color',
-  //   loadChildren: () => import('./pages/color/color.module').then( m => m.ColorPageModule)
-  // }
 ];
 @NgModule({
   imports: [
