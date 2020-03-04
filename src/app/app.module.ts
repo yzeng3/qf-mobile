@@ -11,9 +11,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginGuardGuard } from './guard/login-guard.guard';
 import { ColorPage } from './pages/color/color.page';
+import { MapDragDirective } from './directive/map-drag.directive';
 
 @NgModule({
-  declarations: [AppComponent, ColorPage],
+  declarations: [AppComponent, ColorPage, MapDragDirective],
   entryComponents: [ColorPage],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
   providers: [

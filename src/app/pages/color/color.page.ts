@@ -1,23 +1,30 @@
-import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
+import { PopoverController } from '@ionic/angular';
+import { Factory } from 'src/app/data/factory';
 
 @Component({
   selector: 'app-color',
   templateUrl: './color.page.html',
   styleUrls: ['./color.page.scss'],
 })
-export class ColorPage implements OnInit {
+export class ColorPage implements OnInit, AfterViewInit {
 
-  constructor(private modalCtrl: ModalController) { }
+  @Input() data: []; // 接收传过来的列表, 也可以用 NavParams 接收（官网 modal ）
 
-  ngOnInit() {
+  constructor(private popoverCtrl: PopoverController, private factory: Factory) { }
+
+  ngOnInit() { }
+
+  ngAfterViewInit(): void {
+    document.getElementById(this.factory.colorId).hidden = false;
   }
 
-  dismiss() {
-    // using the injected ModalController this page
-    // can "dismiss" itself and optionally pass back data
-    this.modalCtrl.dismiss({
-      'dismissed': true
+  pickColor(id: string) {
+    this.factory.colorId = id;
+    document.getElementById(id).hidden = false; // 选中的显示勾
+    // 关闭弹框, id传回去
+    this.popoverCtrl.dismiss({
+      _id: id
     });
   }
 }

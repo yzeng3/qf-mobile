@@ -39,7 +39,7 @@ export class Factory {
             factory: [
                 {
                     _id: '0',
-                    name: 'polo衫白', color: '#dcdef3', front: 'public/model/man/polo/baif.jpg', back: 'public/model/man/polo/baib.jpg'
+                    name: 'polo衫白', color: '#DCDEF3', front: 'public/model/man/polo/baif.jpg', back: 'public/model/man/polo/baib.jpg'
                 },
                 {
                     _id: '1',
@@ -185,7 +185,22 @@ export class Factory {
                 { opt_id: '4', opt_name: '蓝色' },
                 { opt_id: '5', opt_name: '红色' }
             ]
+        },
+        {
+            itemNo: '5',
+            itemName: '尺寸',
+            options: [
+                { opt_id: '1', opt_name: 'S' },
+                { opt_id: '2', opt_name: 'M' },
+                { opt_id: '3', opt_name: 'L' },
+                { opt_id: '4', opt_name: 'XL' },
+                { opt_id: '5', opt_name: 'XXL' },
+                { opt_id: '6', opt_name: 'XXXL' }
+            ]
         }
     ];
+
+    // 记录当前选中的颜色编号
+    public colorId = '0';
 
 }

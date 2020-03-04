@@ -1,4 +1,4 @@
-import { ToastController, LoadingController, ModalController } from '@ionic/angular';
+import { ToastController, LoadingController, ModalController, PopoverController } from '@ionic/angular';
 
 
 /**
@@ -51,15 +51,39 @@ export abstract class BaseUI {
      * @param page 需要打开的页面
      * @param params 待传的参数
      */
-    protected async presentModal(modalController: ModalController, page: any, params: any) {
+    protected async presentModal(modalController: ModalController, page: any, params: any, backdrop: boolean, css: any) {
         const modal = await modalController.create({
             component: page,                    // 待打开的页面
-            componentProps: { data: params },    // 传参
+            componentProps: { data: params },   // 传参
             mode: 'ios',                        // iOS模式
             showBackdrop: true,                 // 显示背景
             keyboardClose: true,                // 打开时键盘自动关闭
-            backdropDismiss: false              // 点击背景不能关闭模态
+            backdropDismiss: backdrop,             // 点击背景不能关闭模态
+            cssClass: css
         });
-        return await modal.present();
+        await modal.present();
+        return modal;
+    }
+
+    /**
+     * 打开弹出框通用方法
+     * @param popoverController PopoverController
+     * @param page 需要打开的页面
+     * @param params 待传的参数
+     * @param ev 需要传递的动画事件
+     */
+    protected async presentPopover(popoverController: PopoverController, page: any, params: any, backdrop: boolean, css: any, ev?: any, ) {
+        const popover = await popoverController.create({
+            component: page,
+            componentProps: { data: params },
+            event: ev,              // 动画事件
+            mode: 'ios',            // iOS模式
+            keyboardClose: true,    // 打开时键盘自动关闭
+            backdropDismiss: backdrop, // 点击背景不能关闭模态
+            translucent: false,     // 弹出框是否半透明
+            cssClass: css
+        });
+        await popover.present();
+        return popover;
     }
 }

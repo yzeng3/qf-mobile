@@ -2,7 +2,7 @@ import { Component, OnInit, ɵɵgetInheritedFactory } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Config } from 'src/app/data/config';
 import { Factory } from 'src/app/data/factory';
-import { ModalController } from '@ionic/angular';
+import { ModalController, PopoverController } from '@ionic/angular';
 import { BaseUI } from 'src/app/common/base-ui';
 import { ColorPage } from '../color/color.page';
 
@@ -17,7 +17,7 @@ export class FactoryPage extends BaseUI implements OnInit {
   private modelNo: string;    // 模型编号
   private modelName: string;  // 模型名称
   private imgUrl: string;     // 模型图片地址
-  private factory = [];
+  private factory = [];       // 模型数据
 
   /* 模型参数 */
   private picture = 0; // 正面与背面的图片
@@ -27,7 +27,8 @@ export class FactoryPage extends BaseUI implements OnInit {
     activedRoute: ActivatedRoute,
     private config: Config,
     private router: Router,
-    public modalController: ModalController) {
+    public modalCtrl: ModalController,
+    private popoverCtrl: PopoverController) {
     super();
     this.typeId = activedRoute.snapshot.params.typeId;
     this.modelNo = activedRoute.snapshot.params.modelNo;
@@ -66,12 +67,35 @@ export class FactoryPage extends BaseUI implements OnInit {
   }
 
   // 颜色选择
-  setColor() {
-    const modal = super.presentModal(this.modalController, ColorPage, this.factory);
-
+  async setColor() {
+    const popover = await super.presentPopover(this.popoverCtrl, ColorPage, this.factory, true, 'color-popover');
+    const { data } = await popover.onWillDismiss();
+    // 切换图片，达到换色效果
+    if (data !== undefined) {
+      this.picture = Number(data._id);
+      this.imgUrl = this.factory[this.picture].front;
+    }
   }
 
+  // 贴图
+  setMap() {
+    console.log('set');
+  }
 
+  // 签名
+  sign() {
+    console.log('sign');
+  }
+
+  // 更多参数选择
+  more() {
+    console.log('more');
+  }
+
+  // 实时评分
+  score() {
+    console.log('score');
+  }
 
   // 取消设计
   cancel() {

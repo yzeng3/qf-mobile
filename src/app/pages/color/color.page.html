@@ -1,7 +1,19 @@
-<ion-content>
-  <ion-label>选择颜色</ion-label>
-
-  <ion-button (click)="dismiss()" expand="block" fill="clear" shape="round">
-    取消
-  </ion-button>
+<ion-header class="header">
+  <ion-toolbar>
+    <ion-title>选择颜色</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content mode="md">
+  <ion-list lines="none">
+    <ion-item lines="none" *ngFor="let item of data" (click)="pickColor(item._id)">
+      <div class="color" [ngStyle]="{background: item.color}"></div>
+      <ion-icon id="{{item._id}}" name="checkmark-outline" slot="end" hidden></ion-icon>
+    </ion-item>
+  </ion-list>
 </ion-content>
+<!-- <ion-footer>
+  <ion-toolbar>
+    <ion-label slot="start" class="cancel" color="primary" (click)="dismiss()">取消</ion-label>
+    <ion-label slot="end" class="confirm" color="primary" (click)="confirm()">确认</ion-label>
+  </ion-toolbar>
+</ion-footer> -->
