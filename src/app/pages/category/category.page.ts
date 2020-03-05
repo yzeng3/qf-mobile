@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
-import { Config } from 'src/app/data/config';
+import { MyConfig } from 'src/app/data/config';
 import { Menu } from 'src/app/data/menu';
 
 @Component({
@@ -10,7 +10,7 @@ import { Menu } from 'src/app/data/menu';
 export class CategoryPage implements OnInit, AfterViewInit {
 
   constructor(
-    private config: Config,
+    private config: MyConfig,
   ) {
     this.categoryData = Menu.categoryData; // 初始化数据
   }

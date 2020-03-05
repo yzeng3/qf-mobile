@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from '../http/http.service';
 import { HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { Config } from 'src/app/data/config';
+import { MyConfig } from 'src/app/data/config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
 
-  constructor(private http: HttpService, private config: Config) { }
+  constructor(private http: HttpService, private config: MyConfig) { }
 
   /**
    * 获得分类左边的导航条信息

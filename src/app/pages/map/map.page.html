@@ -1,0 +1,22 @@
+<ion-header class="header">
+  <ion-toolbar>
+    <ion-title>请选择贴图</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="4" *ngFor="let map of maps" (click)="pickMap(map.itemNo)">
+        <ion-img [src]="config.apiUrl + map.itemPath"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer class="footer">
+  <ion-toolbar>
+    <ion-label slot="start" class="cancel" color="primary" (click)="dismiss()">取消</ion-label>
+    <ion-label slot="end" class="confirm" color="primary" (click)="confirm()">确认</ion-label>
+  </ion-toolbar>
+</ion-footer>

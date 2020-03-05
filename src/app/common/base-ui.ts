@@ -55,7 +55,7 @@ export abstract class BaseUI {
         const modal = await modalController.create({
             component: page,                    // 待打开的页面
             componentProps: { data: params },   // 传参
-            mode: 'ios',                        // iOS模式
+            mode: 'md',                        // iOS模式
             showBackdrop: true,                 // 显示背景
             keyboardClose: true,                // 打开时键盘自动关闭
             backdropDismiss: backdrop,             // 点击背景不能关闭模态

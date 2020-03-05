@@ -1,0 +1,27 @@
+.header {
+    ion-toolbar {
+        --background: white;
+        text-align: center;
+        color: #000;
+        font-family: cursive;
+    }
+}
+
+ion-col {
+    margin: 0.5em 0.8em 0 1.8em;
+}
+
+.cancel {
+    margin-left: 2em;
+}
+
+.confirm {
+    margin-right: 2em;
+}
+
+.footer {
+    ion-toolbar {
+        --background: white;
+        color: #000;
+    }
+}

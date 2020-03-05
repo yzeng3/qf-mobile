@@ -200,7 +200,47 @@ export class Factory {
         }
     ];
 
+
+    // 贴图
+    // public static mapFactory = [
+    //     { itemNo: '0', itemPath: 'public/map/map01.png' },
+    //     { itemNo: '1', itemPath: '../../../assets/map/map02.png' },
+    //     { itemNo: '2', itemPath: '../../../assets/map/map03.png' },
+    //     { itemNo: '3', itemPath: '../../../assets/map/map04.png' },
+    //     { itemNo: '4', itemPath: '../../../assets/map/map05.png' },
+    //     { itemNo: '5', itemPath: '../../../assets/map/map06.png' },
+    //     { itemNo: '6', itemPath: '../../../assets/map/map07.png' },
+    //     { itemNo: '7', itemPath: '../../../assets/map/map08.png' },
+    //     { itemNo: '8', itemPath: '../../../assets/map/map09.png' },
+    //     { itemNo: '9', itemPath: '../../../assets/map/map10.png' },
+    //     { itemNo: '10', itemPath: '../../../assets/map/map11.png' },
+    //     { itemNo: '11', itemPath: '../../../assets/map/map12.png' },
+    //     { itemNo: '12', itemPath: '../../../assets/map/map13.png' },
+    //     { itemNo: '13', itemPath: '../../../assets/map/map14.png' },
+    // ];
+
+    public static mapFactory = [
+        { itemNo: '0', itemPath: 'public/map/map01.png' },
+        { itemNo: '1', itemPath: 'public/map/map02.png' },
+        { itemNo: '2', itemPath: 'public/map/map03.png' },
+        { itemNo: '3', itemPath: 'public/map/map04.png' },
+        { itemNo: '4', itemPath: 'public/map/map05.png' },
+        { itemNo: '5', itemPath: 'public/map/map06.png' },
+        { itemNo: '6', itemPath: 'public/map/map07.png' },
+        { itemNo: '7', itemPath: 'public/map/map08.png' },
+        { itemNo: '8', itemPath: 'public/map/map09.png' },
+        { itemNo: '9', itemPath: 'public/map/map10.png' },
+        { itemNo: '10', itemPath: 'public/map/map11.png' },
+        { itemNo: '11', itemPath: 'public/map/map12.png' },
+        { itemNo: '12', itemPath: 'public/map/map13.png' },
+        { itemNo: '13', itemPath: 'public/map/map14.png' },
+    ];
+
     // 记录当前选中的颜色编号
     public colorId = '0';
+    public mapId: number;
+
+
+
 
 }

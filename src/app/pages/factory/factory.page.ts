@@ -1,10 +1,11 @@
 import { Component, OnInit, ɵɵgetInheritedFactory } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Config } from 'src/app/data/config';
+import { MyConfig } from 'src/app/data/config';
 import { Factory } from 'src/app/data/factory';
 import { ModalController, PopoverController } from '@ionic/angular';
 import { BaseUI } from 'src/app/common/base-ui';
 import { ColorPage } from '../color/color.page';
+import { MapPage } from '../map/map.page';
 
 @Component({
   selector: 'app-factory',
@@ -25,7 +26,7 @@ export class FactoryPage extends BaseUI implements OnInit {
 
   constructor(
     activedRoute: ActivatedRoute,
-    private config: Config,
+    private config: MyConfig,
     private router: Router,
     public modalCtrl: ModalController,
     private popoverCtrl: PopoverController) {
@@ -78,8 +79,14 @@ export class FactoryPage extends BaseUI implements OnInit {
   }
 
   // 贴图
-  setMap() {
-    console.log('set');
+  async setMap() {
+    const modal = await super.presentModal(this.modalCtrl, MapPage, null, false, 'map-modal');
+    const { data } = await modal.onWillDismiss();
+    // 返回用户选中贴图的 id 以加载相应图片
+    if (data !== undefined) {
+      this.picture = Number(data._id);
+      this.imgUrl = this.factory[this.picture].front;
+    }
   }
 
   // 签名

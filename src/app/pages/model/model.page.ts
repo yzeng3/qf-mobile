@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Menu } from 'src/app/data/menu';
-import { Config } from 'src/app/data/config';
+import { MyConfig } from 'src/app/data/config';
 
 @Component({
   selector: 'app-model',
@@ -14,7 +14,7 @@ export class ModelPage implements OnInit {
   private typeName = '热门';
   private models = [];
 
-  constructor(activedRoute: ActivatedRoute, private config: Config, private router: Router) {
+  constructor(activedRoute: ActivatedRoute, private config: MyConfig, private router: Router) {
     this.typeId = activedRoute.snapshot.params.typeId;  // 接收design页面的typeId
     this.typeName = activedRoute.snapshot.params.typeName; // 接收typeName
     this.models = Menu.models; // 初始化模型数据
