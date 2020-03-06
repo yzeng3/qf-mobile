@@ -1,16 +1,14 @@
 .header {
     ion-toolbar {
         --background: white !important;
-        position: fixed;
-        width: 17em;
-        border-radius: 8px 8px 0 0;
+        text-align: center;
         font-family: cursive;
         color: #000;
     }
 }
 
 ion-list {
-    padding: 2.8em 0 0.5em 0;
+    padding: 0.5em 0 0.5em 0;
 }
 
 .color {
@@ -20,25 +18,21 @@ ion-list {
 }
 
 ion-icon {
-    color: rgb(250, 103, 44);
+    margin-right: 1em;
+    color: rgb(255, 95, 31);
 }
 
-// ion-footer {
-//     position: fixed;
-//     bottom: 10.5em;
-//     width: 17em;
+.cancel {
+    margin-left: 2em;
+}
 
-//     ion-toolbar {
-//         --background: white !important;
-//         height: 2.5em;
-//         border-radius: 0 0 8px 8px;
+.confirm {
+    margin-right: 2em;
+}
 
-//         .cancel {
-//             padding-left: 1.2em;
-//         }
-
-//         .confirm {
-//             padding-right: 1em;
-//         }
-//     }
-// }
+ion-footer {
+    ion-toolbar {
+        --background: white;
+        color: #000;
+    }
+}

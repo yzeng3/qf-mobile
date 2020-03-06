@@ -10,7 +10,7 @@
 <ion-content>
 
   <ion-list>
-    <ion-item lines="none" class="item1">
+    <ion-item lines="none" class="item1" id="item1">
       <div class="image">
         <ion-img id="img" [src]="config.apiUrl + imgUrl"></ion-img>
       </div>
@@ -51,8 +51,9 @@
     </ion-item>
   </ion-list>
 
-  <div class="myMap" style="width: 56px; height: 56px;" appMapDrag slot="fixed" startRight="0" startTop="0">
-    <ion-img class="map" src="../../../assets/map/map01.png"></ion-img>
+  <div id="frontMap" style="width: 80px; height: 80px;" appMapDrag slot="fixed" startLeft="0" startTop="0" hidden></div>
+  <div id="backMap" style="width: 80px; height: 80px;" appMapDrag slot="fixed" startRight="0" startTop="0" hidden></div>
+  <div id="signature" style="width: 200px; height: 30px;" appMapDrag slot="fixed" startRight="0" startTop="0" hidden>
   </div>
 
 </ion-content>

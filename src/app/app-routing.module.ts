@@ -21,10 +21,6 @@ const routes: Routes = [
   {
     path: 'factory/:typeId/:modelNo/:modelName',
     loadChildren: () => import('./pages/factory/factory.module').then(m => m.FactoryPageModule)
-  },
-  {
-    path: 'map',
-    loadChildren: () => import('./pages/map/map.module').then( m => m.MapPageModule)
   }
 ];
 @NgModule({

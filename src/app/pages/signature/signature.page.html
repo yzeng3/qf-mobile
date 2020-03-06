@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>签名</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="item1">
+    <ion-input type="text" name="signature" #signature autofocus="true" clearInput="true" inputmode="text" maxlength=20
+      value=""></ion-input>
+  </div>
+  <div class="item2">
+    <ion-label color="primary">请输入签名内容, 最多20个字, 包含数字、字母、符合</ion-label>
+  </div>
+  <div class="item3">
+    <ion-button class="dismiss" (click)="dismiss()" expand="block" fill="solid">取消</ion-button>
+    <ion-button class="confirm" (click)="confirm(signature)" expand="block" fill="solid">确认</ion-button>
+  </div>
+</ion-content>

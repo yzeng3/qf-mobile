@@ -1,22 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from '../http/http.service';
 import { HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { MyConfig } from 'src/app/data/config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-  constructor(private http: HttpService) { }
+  constructor(private http: HttpService, private config: MyConfig) { }
 
   // tslint:disable-next-line: ban-types
-  public login(data: Object, successCallback?: Function, failCallback?: Function) {
+  public login(url: string, data: Object, successCallback?: Function, failCallback?: Function) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json; charset=UTF-8'
       })
     };
 
-    this.http.postForm('http://localhost:8090/admin/toLogin', data, httpOptions.headers)
+    this.http.postForm(this.config.apiUrl + url, data, httpOptions.headers)
       .subscribe((res: any) => {
         if (res.code === 2) { // 如果是普通用户
           // 登录成功, 获取data存入localStorage

@@ -7,8 +7,8 @@
 <ion-content>
   <ion-grid fixed>
     <ion-row>
-      <ion-col size="4" *ngFor="let map of maps" (click)="pickMap(map.itemNo)">
-        <ion-img [src]="config.apiUrl + map.itemPath"></ion-img>
+      <ion-col size="4.7" *ngFor="let map of maps" (click)="pickMap(map.itemNo)">
+        <ion-img id="{{map.itemNo}}" [src]="config.apiUrl + map.itemPath"></ion-img>
       </ion-col>
     </ion-row>
   </ion-grid>

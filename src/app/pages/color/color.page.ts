@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
-import { PopoverController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
 import { Factory } from 'src/app/data/factory';
 
 @Component({
@@ -11,20 +11,30 @@ export class ColorPage implements OnInit, AfterViewInit {
 
   @Input() data: []; // 接收传过来的列表, 也可以用 NavParams 接收（官网 modal ）
 
-  constructor(private popoverCtrl: PopoverController, private factory: Factory) { }
+  private colorId: string;
 
-  ngOnInit() { }
+  constructor(private modalCtrl: ModalController, private factory: Factory) { }
+
+  ngOnInit() {
+    this.colorId = this.factory.colorId;
+  }
 
   ngAfterViewInit(): void {
     document.getElementById(this.factory.colorId).hidden = false;
   }
 
   pickColor(id: string) {
-    this.factory.colorId = id;
+    document.getElementById(this.colorId).hidden = true; // 之前的勾隐藏掉
+    this.colorId = id;
     document.getElementById(id).hidden = false; // 选中的显示勾
-    // 关闭弹框, id传回去
-    this.popoverCtrl.dismiss({
-      _id: id
-    });
+  }
+
+  confirm() {
+    this.factory.colorId = this.colorId;
+    this.modalCtrl.dismiss({ _id: this.colorId });
+  }
+
+  dismiss() {
+    this.modalCtrl.dismiss();
   }
 }

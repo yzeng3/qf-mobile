@@ -32,10 +32,10 @@ export class LoginPage extends BaseUI implements OnInit {
 
   }
 
-   async onSubmit() {
-    const loading =  await super.presentLoading(this.loadingController, '登录中...', 3000);
+  async onSubmit() {
+    const loading = await super.presentLoading(this.loadingController, '登录中...', 3000);
     const dataToLogin = { username: this.loginForm.controls.username.value, password: this.loginForm.controls.password.value };
-    this.loginService.login(dataToLogin,
+    this.loginService.login('admin/toLogin', dataToLogin,
       () => {
         super.presentToast(this.toastController, '登录成功', 200, 'bottom', 'success');
         this.navController.navigateRoot('tabs/user');

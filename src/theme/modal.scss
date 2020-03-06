@@ -1,6 +1,20 @@
+.color-modal {
+    --border-color: #000000;
+    --border-radius: 0.6em;
+    --height: 22em;
+    --width: 17em;
+}
+
 .map-modal {
     --border-color: #000000;
     --border-radius: 0.6em;
     --height: 27em;
     --width: 21em;
+}
+
+.signature-modal {
+    --height: 15em;
+    --width: 22em;
+    --border-radius: 0.5em 0.5em 0 0;
+
 }
