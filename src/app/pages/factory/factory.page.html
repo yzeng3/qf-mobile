@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>请开始您的表演-{{modelName}}</ion-title>
+    <ion-title>{{modelName}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -60,10 +60,10 @@
 
 <ion-footer>
   <ion-toolbar>
-    <ion-button (click)="cancel()" expand="block" fill="clear" shape="round" slot="start">
+    <ion-button class="cancel" (click)="cancel()" expand="block" slot="start">
       <ion-label>取消</ion-label>
     </ion-button>
-    <ion-button (click)="save()" expand="block" fill="clear" shape="round" slot="end">
+    <ion-button class="save" (click)="save()" expand="block" slot="end">
       <ion-label>保存</ion-label>
     </ion-button>
   </ion-toolbar>

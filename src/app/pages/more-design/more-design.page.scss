@@ -1,0 +1,33 @@
+ion-header {
+    ion-toolbar {
+        --background: white;
+        color: #000;
+        text-align: center;
+    }
+}
+
+.title {}
+
+.content {
+    color: rgb(97, 94, 94);
+}
+
+.option-title {
+    display: flex;
+
+    p {
+        color: red;
+    }
+}
+
+.supplement {
+    text-align: center;
+    color: gray;
+    font-size: small;
+}
+
+ion-footer {
+        .confirm{
+            --background: rgb(75, 37, 6);
+        }
+}

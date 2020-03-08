@@ -1,12 +1,13 @@
-import { Component, OnInit, ɵɵgetInheritedFactory, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MyConfig } from 'src/app/data/config';
 import { Factory } from 'src/app/data/factory';
-import { ModalController, PopoverController, LoadingController } from '@ionic/angular';
+import { ModalController, LoadingController } from '@ionic/angular';
 import { BaseUI } from 'src/app/common/base-ui';
 import { ColorPage } from '../color/color.page';
 import { MapPage } from '../map/map.page';
 import { SignaturePage } from '../signature/signature.page';
+import { MoreDesignPage } from '../more-design/more-design.page';
 
 @Component({
   selector: 'app-factory',
@@ -16,7 +17,8 @@ import { SignaturePage } from '../signature/signature.page';
 export class FactoryPage extends BaseUI implements OnInit, AfterViewInit {
 
   private typeId: string;     // 模型分类
-  private modelNo: string;    // 模型编号
+  private index: string;      // 地址下标
+  // private modelNo: string;    // 模型编号
   private modelName: string;  // 模型名称
   private imgUrl: string;     // 模型图片地址
   private factory = [];       // 模型数据
@@ -29,39 +31,43 @@ export class FactoryPage extends BaseUI implements OnInit, AfterViewInit {
   private picture = 0;          // 正面与背面的图片
   private mapLst = [0, 0];      // 正背面贴图ID
   private mapIndex: number;     // 贴图编号
+  private moreDesign = [];      // 所有参数
 
   constructor(
     activedRoute: ActivatedRoute,
     private config: MyConfig,
     private router: Router,
     public modalCtrl: ModalController,
-    private popoverCtrl: PopoverController,
     private loadingCtrl: LoadingController) {
     super();
     this.typeId = activedRoute.snapshot.params.typeId;
-    this.modelNo = activedRoute.snapshot.params.modelNo;
+    this.index = activedRoute.snapshot.params.index;
     this.modelName = activedRoute.snapshot.params.modelName;
   }
 
   ngOnInit() {
-    const num = Number(this.modelNo);
-    this.initFactory(this.typeId, num - 1);
+    this.initFactory(this.typeId, Number(this.index));
     this.imgUrl = this.factory[this.picture].front;
   }
 
   // 初始化工厂数据
-  initFactory(typeId: string, num: number) {
+  initFactory(typeId: string, index: number) {
     if (typeId === '1') {
-      this.factory = Factory.hotFactory[num].factory;
+      this.factory = Factory.hotFactory[index].factory;
     } else if (typeId === '2') {
-      this.factory = Factory.manFactory[num].factory;
+      this.factory = Factory.manFactory[index].factory;
     } else if (typeId === '3') {
-      this.factory = Factory.womanFactory[num].factory;
+      this.factory = Factory.womanFactory[index].factory;
     } else if (typeId === '4') {
-      this.factory = Factory.childFactory[num].factory;
+      this.factory = Factory.childFactory[index].factory;
     } else {
-      this.factory = Factory.antiqueFactory[num].factory;
+      this.factory = Factory.antiqueFactory[index].factory;
     }
+  }
+
+  // 初始化更多参数
+  initMoreDesign(modelNo: string) {
+
   }
 
   ngAfterViewInit(): void {
@@ -141,8 +147,13 @@ export class FactoryPage extends BaseUI implements OnInit, AfterViewInit {
   }
 
   // 更多参数选择
-  more() {
-    console.log('more');
+  async more() {
+    const modal = await super.presentModal(this.modalCtrl, MoreDesignPage,
+      { typeId: this.typeId, index: this.index, modelName: this.modelName }, false, '');
+    const { data } = await modal.onDidDismiss();
+    if (data !== undefined) {
+      console.log(data);
+    }
   }
 
   // 实时评分

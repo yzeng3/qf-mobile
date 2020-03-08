@@ -24,7 +24,7 @@ export class ModelPage implements OnInit {
   }
 
   // 进入设计工厂
-  goFactory(modelNo: string, modelName: string) {
-    this.router.navigate(['factory', this.typeId, modelNo, modelName]);
+  goFactory(index: string, modelName: string) {
+    this.router.navigate(['factory', this.typeId, index, modelName]);
   }
 }

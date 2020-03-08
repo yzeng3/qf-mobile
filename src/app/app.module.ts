@@ -13,6 +13,7 @@ import { LoginGuardGuard } from './guard/login-guard.guard';
 import { ColorPage } from './pages/color/color.page';
 import { MapPage } from './pages/map/map.page';
 import { SignaturePage } from './pages/signature/signature.page';
+import { MoreDesignPage } from './pages/more-design/more-design.page';
 // import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 // export class MyHammerConfig extends HammerGestureConfig {
 //   overrides = {
@@ -26,8 +27,8 @@ import { SignaturePage } from './pages/signature/signature.page';
 //   } as any;
 // }
 @NgModule({
-  declarations: [AppComponent, ColorPage, MapPage, SignaturePage],
-  entryComponents: [ColorPage, MapPage, SignaturePage],
+  declarations: [AppComponent, ColorPage, MapPage, SignaturePage, MoreDesignPage],
+  entryComponents: [ColorPage, MapPage, SignaturePage, MoreDesignPage],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
   providers: [
     StatusBar,

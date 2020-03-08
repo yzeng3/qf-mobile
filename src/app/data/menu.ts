@@ -20,45 +20,45 @@ export class Menu {
             typeId: '1',
             typeName: '热门',
             child: [
-                { modelNo: '1', modelName: '圆领短袖', picture: 'public/model/man/myldx/myldxbaif.jpg' },
-                { modelNo: '2', modelName: '圆领长袖', picture: '' },
-                { modelNo: '3', modelName: 'polo衫', picture: 'public/model/man/polo/baif.jpg' }
+                { modelNo: '101', index: '0', modelName: '圆领短袖', picture: 'public/model/man/myldx/myldxbaif.jpg' },
+                { modelNo: '102', index: '1', modelName: '圆领长袖', picture: '' },
+                { modelNo: '103', index: '2', modelName: 'polo衫', picture: 'public/model/man/polo/baif.jpg' }
             ]
         },
         {
             typeId: '2',
             typeName: '男装',
             child: [
-                { modelNo: '1', modelName: '圆领短袖', picture: 'public/model/man/myldx/myldxbaif.jpg' },
-                { modelNo: '2', modelName: '圆领长袖', picture: '' },
-                { modelNo: '3', modelName: 'polo衫', picture: 'public/model/man/polo/baif.jpg' },
+                { modelNo: '201', index: '0', modelName: '圆领短袖', picture: 'public/model/man/myldx/myldxbaif.jpg' },
+                { modelNo: '202', index: '1', modelName: '圆领长袖', picture: '' },
+                { modelNo: '203', index: '2', modelName: 'polo衫', picture: 'public/model/man/polo/baif.jpg' },
             ]
         },
         {
             typeId: '3',
             typeName: '女装',
             child: [
-                { modelNo: '1', modelName: '圆领短袖', picture: 'public/model/woman/fyldx/fyldxbaif.jpg' },
-                { modelNo: '2', modelName: '圆领长袖', picture: '' },
-                { modelNo: '3', modelName: 'polo衫', picture: 'public/model/woman/fweiyi/fweiyihuif.jpg' },
+                { modelNo: '301', index: '0', modelName: '圆领短袖', picture: 'public/model/woman/fyldx/fyldxbaif.jpg' },
+                { modelNo: '302', index: '1', modelName: '圆领长袖', picture: '' },
+                { modelNo: '303', index: '2', modelName: 'polo衫', picture: 'public/model/woman/fweiyi/fweiyihuif.jpg' },
             ]
         },
         {
             typeId: '4',
             typeName: '童装',
             child: [
-                { modelNo: '1', modelName: '圆领短袖', picture: 'public/model/man/myldx/myldxbaif.jpg' },
-                { modelNo: '2', modelName: '圆领长袖', picture: '' },
-                { modelNo: '3', modelName: 'polo衫', picture: 'public/model/man/polo/baif.jpg' },
+                { modelNo: '401', index: '0', modelName: '圆领短袖', picture: 'public/model/man/myldx/myldxbaif.jpg' },
+                { modelNo: '402', index: '1', modelName: '圆领长袖', picture: '' },
+                { modelNo: '403', index: '2', modelName: 'polo衫', picture: 'public/model/man/polo/baif.jpg' },
             ]
         },
         {
             typeId: '5',
             typeName: '古风',
             child: [
-                { modelNo: '1', modelName: '圆领短袖', picture: 'public/model/man/myldx/myldxbaif.jpg' },
-                { modelNo: '2', modelName: '圆领长袖', picture: '' },
-                { modelNo: '3', modelName: 'polo衫', picture: 'public/model/man/polo/baif.jpg' },
+                { modelNo: '501', index: '0', modelName: '圆领短袖', picture: 'public/model/man/myldx/myldxbaif.jpg' },
+                { modelNo: '502', index: '1', modelName: '圆领长袖', picture: '' },
+                { modelNo: '503', index: '2', modelName: 'polo衫', picture: 'public/model/man/polo/baif.jpg' },
             ]
         }
     ];

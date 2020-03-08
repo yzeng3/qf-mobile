@@ -19,7 +19,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/model/model.module').then(m => m.ModelPageModule)
   },
   {
-    path: 'factory/:typeId/:modelNo/:modelName',
+    path: 'factory/:typeId/:index/:modelName',
     loadChildren: () => import('./pages/factory/factory.module').then(m => m.FactoryPageModule)
   }
 ];

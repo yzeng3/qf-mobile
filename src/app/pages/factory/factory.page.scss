@@ -1,3 +1,9 @@
+ion-header {
+    ion-toolbar {
+        // text-align: center;
+    }
+}
+
 ion-list {
     height: 100%;
 
@@ -46,11 +52,24 @@ ion-list {
 }
 
 ion-footer {
-    ion-button {
-        height: 2.5em;
-        --border-color: #f7f7f7;
-        --color: #f7f7f7;
-        font-size: 1.2rem;
+    ion-toolbar {
+        --background: white;
+
+        ion-button {
+            height: 2em;
+            --color: #f7f7f7;
+            font-size: 1.2rem;
+        }
+
+        .cancel {
+            margin-left: 1em;
+            --background: #818185;
+        }
+
+        .save {
+            margin-right: 1em;
+            --background: #7c4a12;
+        }
     }
 }
 
