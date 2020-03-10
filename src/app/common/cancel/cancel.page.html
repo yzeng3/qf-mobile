@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div> {{text}}</div>
+</ion-content>
+<ion-footer>
+  <ion-item>
+    <ion-button class="cancel" (click)="cancel()" expand="block" fill="clear">
+      取消
+    </ion-button>
+    <ion-button class="confirm" (click)="confirm()" expand="block" fill="clear">
+      确认
+    </ion-button>
+  </ion-item>
+</ion-footer>

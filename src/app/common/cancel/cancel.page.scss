@@ -1,0 +1,25 @@
+ion-header {
+    ion-toolbar {
+        --background: white;
+        color: #000;
+        text-align: center;
+    }
+}
+
+ion-content {
+    --background: white;
+
+    div {
+        margin: 0.5em 1em;
+    }
+}
+
+.cancel {
+    width: 50%;
+    font: 1em sans-serif;
+}
+
+.confirm {
+    width: 50%;
+    font: 1em sans-serif;
+}

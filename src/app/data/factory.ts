@@ -39,7 +39,7 @@ export class Factory {
             factory: [
                 {
                     _id: '0',
-                    name: 'polo衫白', color: '#DCDEF3', front: 'public/model/man/polo/baif.jpg', back: 'public/model/man/polo/baib.jpg'
+                    name: '白色', color: '#DCDEF3', front: 'public/model/man/polo/baif.jpg', back: 'public/model/man/polo/baib.jpg'
                 },
                 {
                     _id: '1',

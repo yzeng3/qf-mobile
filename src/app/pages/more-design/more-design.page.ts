@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Factory } from 'src/app/data/factory';
 import { ModalController } from '@ionic/angular';
+import { Clone } from 'src/app/services/util/clone';
 
 @Component({
   selector: 'app-more-design',
@@ -9,6 +10,10 @@ import { ModalController } from '@ionic/angular';
 })
 export class MoreDesignPage implements OnInit {
 
+  constructor(private modalCtrl: ModalController, private factory: Factory) {
+    this.parameters = this.factory.moreDesign;
+  }
+
   @Input() data: any;
 
   private modelName: string;
@@ -16,9 +21,10 @@ export class MoreDesignPage implements OnInit {
   private optional = [];      // 可选择的
   private parameters = [];    // 选择结果
 
-  constructor(private modalCtrl: ModalController, private factory: Factory) {
-    this.parameters = this.factory.designDraft;
-  }
+  // select框配置，参考 base-ui
+  customOptions: any = {
+    cssClass: 'more-select'
+  };
 
   ngOnInit() {
     this.modelName = this.data.modelName;
@@ -36,8 +42,9 @@ export class MoreDesignPage implements OnInit {
     if (typeId === '1') {
 
     } else if (typeId === '2') {
-      const all = Factory.manModelMoreDesign[Number(this.data.index)].more;
-      this.initMore(all.slice(0));
+      const tem = Factory.manModelMoreDesign[Number(this.data.index)].more; // 强复制一份数据
+      const temClone = Clone.deepClone(tem);
+      this.initMore(temClone);
     } else if (typeId === '3') {
 
     } else if (typeId === '4') {
@@ -48,7 +55,7 @@ export class MoreDesignPage implements OnInit {
   }
 
   initMore(data: any) {
-    this.parameters = data.slice(0);
+    this.parameters = data.slice(0); // 对于基本数据类型，slice等于深拷贝
     this.optional = data;
     this.fixed = this.optional.shift(); // 删除第一个元素
   }
@@ -60,7 +67,7 @@ export class MoreDesignPage implements OnInit {
   }
 
   confirm() {
-    this.factory.designDraft = this.parameters;
+    this.factory.moreDesign = this.parameters;
     this.modalCtrl.dismiss();
   }
 

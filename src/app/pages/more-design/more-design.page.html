@@ -15,8 +15,8 @@
     <ion-item *ngFor="let item of optional">
       <ion-label class="option-title">{{item.itemName}}<p>*</p>
       </ion-label>
-      <ion-select id="{{item.itemNo}}" value="{{item.option}}" cancelText='取消' mode='md'
-        okText='确认' (ionChange)="getSelectValue($event)">
+      <ion-select id="{{item.itemNo}}" value="{{item.option}}" cancelText='取消' mode='ios'
+        okText='确认' (ionChange)="getSelectValue($event)" [interfaceOptions]="customOptions">
         <ion-select-option *ngFor="let opt of item.options" value="{{opt.opt_name}}">{{opt.opt_name}}
         </ion-select-option>
       </ion-select>
