@@ -15,6 +15,7 @@ import { MapPage } from './pages/map/map.page';
 import { SignaturePage } from './pages/signature/signature.page';
 import { MoreDesignPage } from './pages/more-design/more-design.page';
 import { CancelPage } from './common/cancel/cancel.page';
+import { InputModalPage } from './common/input-modal/input-modal.page';
 // import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 // export class MyHammerConfig extends HammerGestureConfig {
 //   overrides = {
@@ -28,8 +29,8 @@ import { CancelPage } from './common/cancel/cancel.page';
 //   } as any;
 // }
 @NgModule({
-  declarations: [AppComponent, ColorPage, MapPage, SignaturePage, MoreDesignPage, CancelPage],
-  entryComponents: [ColorPage, MapPage, SignaturePage, MoreDesignPage, CancelPage],
+  declarations: [AppComponent, ColorPage, MapPage, SignaturePage, MoreDesignPage, CancelPage, InputModalPage],
+  entryComponents: [ColorPage, MapPage, SignaturePage, MoreDesignPage, CancelPage, InputModalPage],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
   providers: [
     StatusBar,

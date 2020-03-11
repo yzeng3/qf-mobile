@@ -1,0 +1,28 @@
+
+ion-content {
+    --background: white;
+    .item1 {
+        background: white;
+        margin: 1em 1em;
+
+        ion-input {
+            margin-top: 1em;
+            --padding-top: 0;
+            --padding-end: 0;
+            --padding-bottom: 0;
+            --padding-start: 0;
+            font: 1.2em sans-serif;
+            border: 2px dashed #e91009;
+        }
+
+    }
+}
+.cancel {
+    width: 50%;
+    font: 1em sans-serif;
+}
+
+.confirm {
+    width: 50%;
+    font: 1em sans-serif;
+}

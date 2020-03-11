@@ -20,11 +20,11 @@ export class CancelPage implements OnInit {
   }
 
   cancel() {
-    this.modalCtrl.dismiss({ res: '0' });
+    this.modalCtrl.dismiss({ res: false });
   }
 
   confirm() {
-    this.modalCtrl.dismiss({ res: '1' });
+    this.modalCtrl.dismiss({ res: true });
   }
 
 }

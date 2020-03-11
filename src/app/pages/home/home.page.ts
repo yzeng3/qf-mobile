@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { QfDictionary } from 'src/app/services/util/qfDictionary';
 
 @Component({
   selector: 'app-home',
@@ -9,8 +10,7 @@ export class HomePage implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   // 进去搜索页面
   goSearch() {

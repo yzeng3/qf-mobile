@@ -25,6 +25,10 @@ const routes: Routes = [
   {
     path: 'factory/:typeId/:index/:modelName',
     loadChildren: () => import('./pages/factory/factory.module').then(m => m.FactoryPageModule)
+  },
+  {
+    path: 'draft/:typeId/:index/:modelName',
+    loadChildren: () => import('./pages/draft/draft.module').then( m => m.DraftPageModule)
   }
 ];
 @NgModule({

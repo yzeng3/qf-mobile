@@ -20,11 +20,17 @@
 }
 
 .cancel-modal {
-    --height: 11em;
+    --height: 16em;
     --width: 18em;
     --border-radius: 0.5em 0.5em 0.5em 0.5em;
 }
 
 .more-select {
     --ion-text-color: rgb(243, 225, 225);
+}
+
+.input-modal{
+    --height: 16em;
+    --width: 18em;
+    --border-radius: 0.5em 0.5em 0.5em 0.5em;
 }

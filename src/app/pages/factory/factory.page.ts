@@ -9,6 +9,8 @@ import { MapPage } from '../map/map.page';
 import { SignaturePage } from '../signature/signature.page';
 import { MoreDesignPage } from '../more-design/more-design.page';
 import { CancelPage } from 'src/app/common/cancel/cancel.page';
+import { QfDictionary } from 'src/app/services/util/qfDictionary';
+import { InputModalPage } from 'src/app/common/input-modal/input-modal.page';
 
 @Component({
   selector: 'app-factory',
@@ -29,7 +31,7 @@ export class FactoryPage extends BaseUI implements OnInit, AfterViewInit {
 
   /* 模型参数 */
   private picture = 0;          // 正面与背面的图片
-  private mapLst = [-1, -1];      // 正背面贴图ID
+  private mapLst = [-1, -1];    // 正背面贴图ID
   private mapIndex: number;     // 贴图编号
   private signature = '';       // 签名
 
@@ -152,31 +154,14 @@ export class FactoryPage extends BaseUI implements OnInit, AfterViewInit {
 
   // 实时评分
   score() {
-    console.log('score');
-  }
-
-  // 取消设计
-  async cancel() {
-    const modal = await super.presentModal(this.modalCtrl, CancelPage,
-      { title: '退出提示', text: '您是否确认退出设计，退出之后，您的设计数据都将被清空!' }, false, 'cancel-modal');
-    const { data } = await modal.onDidDismiss();
-    if (data.res === '1') { // 清空所有记录
-      this.fac.colorId = '0';
-      this.fac.moreDesign = [];
-      this.fac.designDraft = [];
-      this.router.navigate(['tabs/design']);
-    }
-  }
-  // 保存设计稿，跳转评分页面
-  save() {
     if (this.fac.moreDesign.length === 0) {
-      const toast = super.presentToast(this.toastCtrl, '请将[更多设计]里的参数填写完成，否则不能生成设计稿', 2500, 'top');
+      super.presentToast(this.toastCtrl, '请将->[更多设计]->里的参数填写完成,否则无法计算评分', 2100, 'middle');
     } else {
       this.fac.designDraft = this.fac.moreDesign;
-
+      console.log(this.fac.moreDesign);
       // 存入颜色选择
       const len = this.fac.designDraft.length;
-      const myColor = { itemNo: len.toString(), itemName: '颜色', supplement: '选择的服装颜色', option: this.fac.colorId };
+      const myColor = { itemNo: len.toString(), itemName: '颜色', supplement: '选择的服装颜色', option: this.picture };
       this.fac.designDraft.push(myColor);
 
       // 存入个性签名
@@ -188,4 +173,54 @@ export class FactoryPage extends BaseUI implements OnInit, AfterViewInit {
       this.fac.designDraft.push(myMaps);
     }
   }
+
+  // 取消设计
+  async cancel() {
+    const modal = await super.presentModal(this.modalCtrl, CancelPage,
+      { title: '退出提示', text: '您是否确认退出设计，退出之后，您的设计数据都将被清空!' }, false, 'cancel-modal');
+    const { data } = await modal.onDidDismiss();
+    if (data.res) { // 清空所有记录
+      this.fac.colorId = '0';
+      this.fac.moreDesign = [];
+      this.fac.designDraft = [];
+      this.router.navigate(['tabs/design']);
+    }
+  }
+  // 保存设计稿，跳转评分页面
+  async save() {
+    if (this.fac.moreDesign.length === 0) {
+      super.presentToast(this.toastCtrl, '请将->[更多设计]->里的参数填写完成,否则不能生成设计稿', 2300, 'middle');
+    } else {
+      const modal = await super.presentModal(this.modalCtrl, InputModalPage,
+        { title: '输入', text: '设计稿名称,最长20个字包括符合' }, false, 'input-modal');
+      const { data } = await modal.onDidDismiss();
+      if (data.res) {
+        const loading = await super.presentLoading(this.loadingCtrl, '正在保存...', 2000);
+        // 生成模型数据
+        const myModel = new QfDictionary();
+        myModel.set('user_id', window.localStorage.getItem('user_id'));
+        myModel.set('model_name', data.name);
+        myModel.set('score', '100');
+        for (const item of this.fac.moreDesign[0].fixed) {
+          myModel.set(item.opt_header, item.opt_name);
+        }
+        myModel.set('image_front', this.factory[this.picture].front);
+        myModel.set('image_back', this.factory[this.picture].back);
+        myModel.set('signature', this.signature);
+        if (this.mapLst[0] >= 0) {
+          myModel.set('printing_front', Factory.mapFactory[this.mapLst[0]].itemPath);
+        }
+        if (this.mapLst[0] >= 0) {
+          myModel.set('printing_back', Factory.mapFactory[this.mapLst[1]].itemPath);
+        }
+        console.log(myModel);
+
+        // this.router.navigate(['draft', this.typeId, this.index, this.modelName]);
+        loading.dismiss();
+      } else {
+        super.presentToast(this.toastCtrl, '设计稿名称是必填项!', 2000, 'middle');
+      }
+    }
+  }
+
 }

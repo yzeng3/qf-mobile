@@ -267,19 +267,19 @@ export class Factory {
                 {
                     itemNo: '0', itemName: '固定属性', supplement: '',
                     fixed: [
-                        { opt_id: '1', opt_type: '主题风格', opt_name: '简约' },
-                        { opt_id: '2', opt_type: '厚薄', opt_name: '常规' },
-                        { opt_id: '3', opt_type: '洗水工艺', opt_name: '普洗' },
-                        { opt_id: '4', opt_type: '领型', opt_name: '圆领' },
-                        { opt_id: '5', opt_type: '版型', opt_name: '修身款' },
-                        { opt_id: '6', opt_type: '适用对象', opt_name: '青少年' },
-                        { opt_id: '7', opt_type: '适用季节', opt_name: '四季' },
-                        { opt_id: '8', opt_type: '袖长', opt_name: '长袖' },
-                        { opt_id: '9', opt_type: '上市时间', opt_name: '2020年春季' }
+                        { opt_id: '1', opt_header: 'main_style', opt_type: '主题风格', opt_name: '简约' },
+                        { opt_id: '2', opt_header: 'thickness', opt_type: '厚薄', opt_name: '常规' },
+                        { opt_id: '3', opt_header: 'washing', opt_type: '洗水工艺', opt_name: '普洗' },
+                        { opt_id: '4', opt_header: 'collar_type', opt_type: '领型', opt_name: '圆领' },
+                        { opt_id: '5', opt_header: 'model_type', opt_type: '版型', opt_name: '修身款' },
+                        { opt_id: '6', opt_header: 'suitable', opt_type: '适用对象', opt_name: '青少年' },
+                        { opt_id: '7', opt_header: 'season', opt_type: '适用季节', opt_name: '四季' },
+                        { opt_id: '8', opt_header: 'sleeve', opt_type: '袖长', opt_name: '长袖' },
+                        { opt_id: '9', opt_header: 'time_to_market', opt_type: '上市时间', opt_name: '2020年春季' }
                     ]
                 },
                 {
-                    itemNo: '1', itemName: '面料', supplement: '', option: '棉80%,涤纶20%',
+                    itemNo: '1', item_header: 'shell_fabric', itemName: '面料', supplement: '', option: '棉80%,涤纶20%',
                     options: [
                         { opt_id: '1', opt_name: '棉90%,涤纶10%' },
                         { opt_id: '2', opt_name: '棉80%,涤纶20%' },
@@ -287,7 +287,7 @@ export class Factory {
                     ]
                 },
                 {
-                    itemNo: '2', itemName: '左袖子颜色', supplement: '特色选择', option: '保持原样',
+                    itemNo: '2', item_header: 'sleeve_left_color', itemName: '左袖子颜色', supplement: '特色选择', option: '保持原样',
                     options: [
                         { opt_id: '1', opt_name: '保持原样' },
                         { opt_id: '2', opt_name: '白色' },
@@ -297,7 +297,7 @@ export class Factory {
                     ]
                 },
                 {
-                    itemNo: '3', itemName: '右袖子颜色', supplement: '特色选择', option: '保持原样',
+                    itemNo: '3', item_header: 'sleeve_right_color', itemName: '右袖子颜色', supplement: '特色选择', option: '保持原样',
                     options: [
                         { opt_id: '1', opt_name: '保持原样' },
                         { opt_id: '2', opt_name: '白色' },
@@ -307,7 +307,7 @@ export class Factory {
                     ]
                 },
                 {
-                    itemNo: '4', itemName: '尺寸', supplement: '', option: 'M',
+                    itemNo: '4', item_header: 'size', itemName: '尺寸', supplement: '', option: 'M',
                     options: [
                         { opt_id: '1', opt_name: 'S' },
                         { opt_id: '2', opt_name: 'M' },
