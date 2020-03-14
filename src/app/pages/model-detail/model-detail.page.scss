@@ -1,0 +1,28 @@
+ion-header{
+    ion-toolbar{
+        text-align: center;
+    }
+}
+
+ion-content{
+    ion-list{
+        .fixed{
+            color: #696666;
+        }
+    }
+}
+
+ion-footer {
+    ion-toolbar {
+        --background: white;
+        color: #000;
+
+        .cancel {
+            margin-left: 2em;
+        }
+        
+        .confirm {
+            margin-right: 2em;
+        }
+    }
+}

@@ -11,6 +11,8 @@ import { MoreDesignPage } from '../more-design/more-design.page';
 import { CancelPage } from 'src/app/common/cancel/cancel.page';
 import { QfDictionary } from 'src/app/services/util/qfDictionary';
 import { InputModalPage } from 'src/app/common/input-modal/input-modal.page';
+import { FactoryService } from 'src/app/services/factory/factory.service';
+import { Clone } from 'src/app/services/util/clone';
 
 @Component({
   selector: 'app-factory',
@@ -42,7 +44,8 @@ export class FactoryPage extends BaseUI implements OnInit, AfterViewInit {
     private fac: Factory,
     public modalCtrl: ModalController,
     private loadingCtrl: LoadingController,
-    private toastCtrl: ToastController) {
+    private toastCtrl: ToastController,
+    private factoryService: FactoryService) {
     super();
     this.typeId = activedRoute.snapshot.params.typeId;
     this.index = activedRoute.snapshot.params.index;
@@ -201,22 +204,44 @@ export class FactoryPage extends BaseUI implements OnInit, AfterViewInit {
         myModel.set('user_id', window.localStorage.getItem('user_id'));
         myModel.set('model_name', data.name);
         myModel.set('score', '100');
+        myModel.set('category', this.modelName);
+        myModel.set('belong', '主页设计');
         for (const item of this.fac.moreDesign[0].fixed) {
           myModel.set(item.opt_header, item.opt_name);
         }
+        const temClone = Clone.deepClone(this.fac.moreDesign); // 克隆一份
+        temClone.shift(); // 去掉第一个
+        for (const item of temClone) {
+          myModel.set(item.item_header, item.option);
+        }
+        myModel.set('color', this.factory[this.picture].name);
         myModel.set('image_front', this.factory[this.picture].front);
         myModel.set('image_back', this.factory[this.picture].back);
+        // 正面与背面的截图
+        myModel.set('img_f', this.factory[this.picture].front);
+        myModel.set('img_b', this.factory[this.picture].back);
+        myModel.set('status', '1');
         myModel.set('signature', this.signature);
         if (this.mapLst[0] >= 0) {
           myModel.set('printing_front', Factory.mapFactory[this.mapLst[0]].itemPath);
         }
-        if (this.mapLst[0] >= 0) {
+        if (this.mapLst[1] >= 0) {
           myModel.set('printing_back', Factory.mapFactory[this.mapLst[1]].itemPath);
         }
-        console.log(myModel);
-
-        // this.router.navigate(['draft', this.typeId, this.index, this.modelName]);
-        loading.dismiss();
+        this.factoryService.postModelData('api/factory', myModel.item,
+          (res: any) => {
+            if (res.code === 1) {
+              loading.dismiss();
+              this.router.navigate(['tabs/draft']);
+              super.presentToast(this.toastCtrl, res.msg, 1500, 'middle', 'primary');
+            } else {
+              super.presentToast(this.toastCtrl, res.msg, 2000, 'middle', 'danger');
+            }
+          }, (err: any) => {
+            console.log(err);
+            super.presentToast(this.toastCtrl, '网络出错,请重新尝试');
+          }
+        );
       } else {
         super.presentToast(this.toastCtrl, '设计稿名称是必填项!', 2000, 'middle');
       }

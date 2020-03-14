@@ -3,6 +3,7 @@ ion-header {
         text-align: center;
     }
 }
+
 /*************** 产品列表 *****************/
 .product-list {
     padding: 0 0;
@@ -92,12 +93,21 @@ ion-header {
     }
 }
 
-// 底部
-.all_price {
-    height: 2em;
+ion-footer {
+    ion-toolbar {
+        --background: #ffffff;
 
-    ion-checkbox {
-        position: relative;
+        ion-label{
+            color: rgb(99, 96, 96);
+        }
+
+        ion-checkbox {
+            --border-color: rgb(99, 96, 96);
+        }
+        ion-button{
+            width: 20%;
+            height: 60%;
+        }
     }
 }
 

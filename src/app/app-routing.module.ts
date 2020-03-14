@@ -11,6 +11,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
+    path: 'tabs/user',
+    loadChildren: () => import('./pages/tabs/tabs.module').then(m => m.TabsPageModule)
+  },
+  {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule)
   },
@@ -27,8 +31,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/factory/factory.module').then(m => m.FactoryPageModule)
   },
   {
-    path: 'draft/:typeId/:index/:modelName',
+    path: 'tabs/draft',
     loadChildren: () => import('./pages/draft/draft.module').then( m => m.DraftPageModule)
+  },
+  {
+    path: 'detail/:modelId',
+    loadChildren: () => import('./pages/model-detail/model-detail.module').then( m => m.ModelDetailPageModule)
   }
 ];
 @NgModule({

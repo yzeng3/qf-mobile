@@ -120,9 +120,13 @@
 </ion-content>
 <ion-footer>
   <ion-toolbar>
-    <div class="all_price">
+    <ion-item lines="none">
       <ion-checkbox color="danger"></ion-checkbox>
-      全选 <strong>合计:2000元</strong>
-    </div>
+      <ion-label>全选</ion-label>
+      <ion-label>共计200元</ion-label>
+      <ion-button (click)="buy()" slot="end" expand="block" shape="round">
+        结算
+      </ion-button>
+    </ion-item>
   </ion-toolbar>
 </ion-footer>

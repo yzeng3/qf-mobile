@@ -1,9 +1,44 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>draft</ion-title>
+    <ion-button (click)="back()" slot="start" expand="block">
+      返回
+    </ion-button>
+    <ion-title>我的设计稿</ion-title>
+    <ion-button (click)="edit()" slot="end" expand="block">
+      编辑
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <ion-list lines="none" *ngFor="let model of models">
+    <ion-item class="belong">
+      <ion-icon name="layers-outline"></ion-icon>
+      <ion-label>{{model.belong}}</ion-label>
+      <ion-icon name="create-outline" (click)="detail(model.model_id)"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-img [src]="config.apiUrl + model.img_f"></ion-img>
+      <ion-img [src]="config.apiUrl + model.img_b"></ion-img>
+      <ion-list class="info">
+        <ion-label>{{model.category}}</ion-label>
+        <ion-label>{{model.model_name}}</ion-label>
+        <ion-label class="score">评分: {{model.score}}</ion-label>
+      </ion-list>
+    </ion-item>
+    <ion-item class="buttons">
+      <ion-label>{{model.create_time}}</ion-label>
+      <ion-button (click)="detail(model.model_id)" slot="end" expand="block" fill="clear" shape="round">
+        查看详情
+      </ion-button>
+      <ion-button (click)="generateTask(model.model_id)" slot="end" expand="block" fill="clear" shape="round">
+        生成任务单
+      </ion-button>
+      <ion-button (click)="delete(model.model_id)" slot="end" expand="block" fill="clear" shape="round">
+        删除
+      </ion-button>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

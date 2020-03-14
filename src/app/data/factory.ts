@@ -43,35 +43,35 @@ export class Factory {
                 },
                 {
                     _id: '1',
-                    name: '', color: '#111112', front: 'public/model/man/polo/heif.jpg', back: 'public/model/man/polo/heib.jpg'
+                    name: '黑色', color: '#111112', front: 'public/model/man/polo/heif.jpg', back: 'public/model/man/polo/heib.jpg'
                 },
                 {
                     _id: '2',
-                    name: '', color: '#ac0521', front: 'public/model/man/polo/hongf.jpg', back: 'public/model/man/polo/hongb.jpg'
+                    name: '红色', color: '#ac0521', front: 'public/model/man/polo/hongf.jpg', back: 'public/model/man/polo/hongb.jpg'
                 },
                 {
                     _id: '3',
-                    name: '', color: '#d52668', front: 'public/model/man/polo/hongsf.jpg', back: 'public/model/man/polo/hongsb.jpg'
+                    name: '粉色', color: '#d52668', front: 'public/model/man/polo/hongsf.jpg', back: 'public/model/man/polo/hongsb.jpg'
                 },
                 {
                     _id: '4',
-                    name: '', color: '#dacc6b', front: 'public/model/man/polo/huangf.jpg', back: 'public/model/man/polo/huangb.jpg'
+                    name: '淡黄色', color: '#dacc6b', front: 'public/model/man/polo/huangf.jpg', back: 'public/model/man/polo/huangb.jpg'
                 },
                 {
                     _id: '5',
-                    name: '', color: '#3a78b8', front: 'public/model/man/polo/lanf.jpg', back: 'public/model/man/polo/lanb.jpg'
+                    name: '蓝色', color: '#3a78b8', front: 'public/model/man/polo/lanf.jpg', back: 'public/model/man/polo/lanb.jpg'
                 },
                 {
                     _id: '6',
-                    name: '', color: '#148043', front: 'public/model/man/polo/lvf.jpg', back: 'public/model/man/polo/lvb.jpg'
+                    name: '绿色', color: '#148043', front: 'public/model/man/polo/lvf.jpg', back: 'public/model/man/polo/lvb.jpg'
                 },
                 {
                     _id: '7',
-                    name: '', color: '#7eb54c', front: 'public/model/man/polo/lvsf.jpg', back: 'public/model/man/polo/lvsb.jpg'
+                    name: '淡绿色', color: '#7eb54c', front: 'public/model/man/polo/lvsf.jpg', back: 'public/model/man/polo/lvsb.jpg'
                 },
                 {
                     _id: '8',
-                    name: '', color: '#3d1958', front: 'public/model/man/polo/zif.jpg', back: 'public/model/man/polo/zib.jpg'
+                    name: '紫色', color: '#3d1958', front: 'public/model/man/polo/zif.jpg', back: 'public/model/man/polo/zib.jpg'
                 },
             ]
         }
