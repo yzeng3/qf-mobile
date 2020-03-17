@@ -37,6 +37,26 @@ const routes: Routes = [
   {
     path: 'detail/:modelId',
     loadChildren: () => import('./pages/model-detail/model-detail.module').then( m => m.ModelDetailPageModule)
+  },
+  {
+    path: 'await-task',
+    loadChildren: () => import('./pages/await-task/await-task.module').then( m => m.AwaitTaskPageModule)
+  },
+  {
+    path: 'generate-task/:belong/:modelId',
+    loadChildren: () => import('./pages/generate-task/generate-task.module').then( m => m.GenerateTaskPageModule)
+  },
+  {
+    path: 'released-task',
+    loadChildren: () => import('./pages/released-task/released-task.module').then( m => m.ReleasedTaskPageModule)
+  },
+  {
+    path: 'tabs/overdue-task',
+    loadChildren: () => import('./pages/overdue-task/overdue-task.module').then( m => m.OverdueTaskPageModule)
+  },
+  {
+    path: 'accepted-task',
+    loadChildren: () => import('./pages/accepted-task/accepted-task.module').then( m => m.AcceptedTaskPageModule)
   }
 ];
 @NgModule({

@@ -1,19 +1,22 @@
-ion-header{
-    ion-toolbar{
+ion-header {
+    ion-toolbar {
         text-align: center;
     }
 }
 
-ion-content{
-    ion-list{
-        .fixed{
-            color: #696666;
-        }
-        .print{
-            width: 4em;
-            height: 4em;
+ion-content {
+
+    ion-list {
+        .val {
+            width: 50%;
+            color: rgb(21, 130, 231);
+
+            ion-icon {
+                color: rgb(21, 130, 231);
+            }
         }
     }
+
 }
 
 ion-footer {
@@ -24,7 +27,7 @@ ion-footer {
         .cancel {
             margin-left: 2em;
         }
-        
+
         .confirm {
             margin-right: 2em;
         }

@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>任务单生成</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>设计稿编号</ion-label>
+      <ion-item class="val" (click)="info(modelId)">
+        <ion-label>{{modelId}}</ion-label>
+        <ion-icon name="eye-outline"></ion-icon>
+      </ion-item>
+    </ion-item>
+    <ion-item>
+      <ion-label>作者</ion-label>
+      <ion-item class="val" (click)="viewUserInfo()">
+        <ion-label>{{userName}}</ion-label>
+        <ion-icon name="eye-outline"></ion-icon>
+      </ion-item>
+    </ion-item>
+    <ion-item>
+      <ion-label>所属</ion-label>
+      <ion-item class="val">
+        <ion-label>{{supplierId}}</ion-label>
+      </ion-item>
+    </ion-item>
+    <ion-item>
+      <ion-label>店家参考尺码</ion-label>
+      <ion-item class="val" (click)="changeSize()">
+        <ion-label>尺码11</ion-label>
+        <ion-icon name="build-outline"></ion-icon>
+      </ion-item>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>悬赏金额</ion-label>
+      <ion-input #expectAmount type="number" placeholder="填写数字比如, 150" value=""></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>定制时间</ion-label>
+      <ion-input #delivery type="text" placeholder="比如, 60天" value=""></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>补充说明</ion-label>
+      <ion-input #supplement type="text" placeholder="比如, 定制时间可以是2-3个月..." value=""></ion-input>
+    </ion-item>
+    <ion-button (click)="getScore()" expand="block" fill="clear" shape="round">
+      计算评分
+    </ion-button>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-label slot="start" class="cancel" color="primary" (click)="back()">返回</ion-label>
+    <ion-label slot="end" class="confirm" color="primary" 
+    (click)="commit(expectAmount, delivery, supplement)">生成任务单</ion-label>
+  </ion-toolbar>
+</ion-footer>

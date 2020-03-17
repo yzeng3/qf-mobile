@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>供应商信息</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>供应商编号</ion-label>
+      <ion-label>{{supplier.supplier_code}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>供应商名称</ion-label>
+      <ion-label>{{supplier.supplier_name}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>供应商类型</ion-label>
+      <ion-label>{{supplier.supplier_type}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>联系人</ion-label>
+      <ion-label>{{supplier.supplier_contact}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>联系电话</ion-label>
+      <ion-label>{{supplier.supplier_phone}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>地址</ion-label>
+      <ion-label>{{supplier.supplier_address}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>评价</ion-label>
+      <ion-label>{{supplier.supplier_evaluation}}星</ion-label>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>月销量</ion-label>
+      <ion-label>{{supplier.month_sale}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button (click)="back()" expand="block" fill="clear" shape="round">
+      关闭
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

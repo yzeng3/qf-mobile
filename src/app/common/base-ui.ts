@@ -16,7 +16,7 @@ export abstract class BaseUI {
     protected async presentLoading(loadingController: LoadingController, message: string, duration?: number) {
         const loading = await loadingController.create({
             message: message || 'something loading...',
-            duration: duration || 2000
+            duration: duration || 5000
         });
         await loading.present();
         return loading;

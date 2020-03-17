@@ -127,7 +127,7 @@ export class Factory {
     // 古风
     public static antiqueFactory = [
         {
-            modelNo: '402',
+            modelNo: '501',
             modelName: '圆领短袖',
             factory: [
                 { _id: '1', name: '', picture: '' },

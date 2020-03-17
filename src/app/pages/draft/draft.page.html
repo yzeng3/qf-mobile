@@ -1,11 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-button (click)="back()" slot="start" expand="block">
+    <ion-button (click)="back()" slot="start" expand="block" fill="clear">
       返回
     </ion-button>
     <ion-title>我的设计稿</ion-title>
-    <ion-button (click)="edit()" slot="end" expand="block">
-      编辑
+    <ion-button (click)="edit()" slot="end" expand="block" fill="clear">
+      管理
     </ion-button>
   </ion-toolbar>
 </ion-header>
@@ -29,10 +29,10 @@
     </ion-item>
     <ion-item class="buttons">
       <ion-label>{{model.create_time}}</ion-label>
-      <ion-button (click)="detail(model.model_id)" slot="end" expand="block" fill="clear" shape="round">
+      <ion-button (click)="info(model.model_id)" slot="end" expand="block" fill="clear" shape="round">
         查看详情
       </ion-button>
-      <ion-button (click)="generateTask(model.model_id)" slot="end" expand="block" fill="clear" shape="round">
+      <ion-button (click)="generateTask(model.belong, model.model_id)" slot="end" expand="block" fill="clear" shape="round">
         生成任务单
       </ion-button>
       <ion-button (click)="delete(model.model_id)" slot="end" expand="block" fill="clear" shape="round">

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button (click)="back()" slot="start" expand="block" fill="clear">
+      返回
+    </ion-button>
+    <ion-title>待发布</ion-title>
+    <ion-button (click)="edit()" slot="end" expand="block" fill="clear">
+      管理
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="none" *ngFor="let task of tasks">
+    <ion-item>
+      <ion-label>任务单号 {{task.task_id}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label class="choice" (click)="viewModel(task.model_id)">模型<ion-icon name="eye-outline"></ion-icon></ion-label>
+      <ion-label class="choice" (click)="viewSupplier(task.supplier_id)">供应商<ion-icon name="eye-outline"></ion-icon></ion-label>
+      <ion-label class="score">评分: {{task.score}}</ion-label>
+    </ion-item>
+
+    <ion-item class="buttons">
+      <ion-label>{{task.create_time}}</ion-label>
+      <ion-button (click)="detail(task.task_id)" slot="end" expand="block" fill="clear" shape="round">
+        查看详情
+      </ion-button>
+      <ion-button (click)="release(task.task_id)" slot="end" expand="block" fill="clear" shape="round">
+        发布
+      </ion-button>
+      <ion-button (click)="delete(task.task_id)" slot="end" expand="block" fill="clear" shape="round">
+        删除
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,41 @@
+ion-header {
+    ion-toolbar {
+        margin-top: -0.3em;
+        height: 3em;
+        --background: white;
+        text-align: center;
+        color: #000;
+    }
+}
+
+ion-content {
+    ion-list {
+        ion-item{
+                color: #696666;
+        }
+
+        .print {
+            margin-right: 6em;
+            width: 4em;
+            height: 4em;
+        }
+
+        .img{
+            width: 15em;
+            height: 15em;
+        }
+    }
+}
+
+ion-footer {
+    ion-toolbar {
+        height: 3em;
+        --background: white;
+        color: #000;
+
+        ion-button {
+            margin-top: -0.3em;
+            font: 1.2em sans-serif;
+        }
+    }
+}

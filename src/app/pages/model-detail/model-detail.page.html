@@ -35,7 +35,7 @@
         <ion-select-option value="红色">红色</ion-select-option>
       </ion-select>
     </ion-item>
-    <ion-item id="sleeveRightColor" *ngIf="sleeveRightColor === ''">
+    <ion-item id="sleeveRightColor" *ngIf="sleeveRightColor !== ''">
       <ion-label>右袖子颜色</ion-label>
       <ion-select placeholder="{{sleeveRightColor}}" cancelText='取消' mode='ios' okText='确认'
         (ionChange)="getSelectValue($event)" [interfaceOptions]="customOptions">
@@ -46,14 +46,25 @@
         <ion-select-option value="红色">红色</ion-select-option>
       </ion-select>
     </ion-item>
-
+    <ion-item *ngIf="printFront !== ''">
+      <ion-label>正面印花</ion-label>
+      <ion-img class="print" [src]="config.apiUrl + printFront"></ion-img>
+    </ion-item>
+    <ion-item *ngIf="printBack !== ''">
+      <ion-label>背面印花</ion-label>
+      <ion-img class="print" [src]="config.apiUrl + printBack"></ion-img>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-img [src]="config.apiUrl + imgF"></ion-img>
+      <ion-img [src]="config.apiUrl + imgB"></ion-img>
+    </ion-item>
   </ion-list>
 
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
-    <ion-label slot="start" class="cancel" color="primary" (click)="dismiss()">返回</ion-label>
-    <ion-label slot="end" class="confirm" color="primary" (click)="confirm()">保存修改</ion-label>
+    <ion-label slot="start" class="cancel" color="primary" (click)="back()">返回</ion-label>
+    <ion-label slot="end" class="confirm" color="primary" (click)="commit()">保存修改</ion-label>
   </ion-toolbar>
 </ion-footer>
