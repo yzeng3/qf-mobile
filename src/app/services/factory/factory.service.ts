@@ -132,7 +132,7 @@ export class FactoryService {
   }
 
   /**
-   * 查看任务单
+   * 查看单个任务单
    */
   public viewTask(url: string, data: any, successCallback?: Function, failCallback?: Function) {
     this.http.get(this.config.apiUrl + url, this.httpOptions.headers, data).subscribe(

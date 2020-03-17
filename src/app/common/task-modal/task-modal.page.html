@@ -1,9 +1,41 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>taskModal</ion-title>
+    <ion-title>任务单详情</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-list>
+    <ion-item>
+      <ion-label>任务单号</ion-label>
+      <ion-label>{{item.task_id}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>期望金额</ion-label>
+      <ion-label>{{item.expect_amount}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>期望时间</ion-label>
+      <ion-label>{{item.delivery}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>评分</ion-label>
+      <ion-label>{{item.score}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>附上尺码</ion-label>
+      <ion-label>{{item.size}}</ion-label>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>补充说明</ion-label>
+      <ion-label>{{item.supplement}}</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button (click)="back()" expand="block" fill="clear" shape="round">
+      关闭
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

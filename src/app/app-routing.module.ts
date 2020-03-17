@@ -57,6 +57,10 @@ const routes: Routes = [
   {
     path: 'accepted-task',
     loadChildren: () => import('./pages/accepted-task/accepted-task.module').then( m => m.AcceptedTaskPageModule)
+  },
+  {
+    path: 'task-detail/:taskId',
+    loadChildren: () => import('./pages/task-detail/task-detail.module').then( m => m.TaskDetailPageModule)
   }
 ];
 @NgModule({

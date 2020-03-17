@@ -29,22 +29,29 @@
     --ion-text-color: rgb(243, 225, 225);
 }
 
-.input-modal{
+.input-modal {
     --height: 16em;
     --width: 18em;
     --border-radius: 0.5em 0.5em 0.5em 0.5em;
 }
 
-.draft-modal{
+.draft-modal {
     --border-color: #000000;
     --border-radius: 0.6em;
     --height: 35em;
     --width: 22em;
 }
 
-.supplier-common-modal{
+.supplier-common-modal {
     --border-color: #000000;
     --border-radius: 0.6em;
     --height: 30em;
+    --width: 20em;
+}
+
+.task-common-modal {
+    --border-color: #000000;
+    --border-radius: 0.6em;
+    --height: 24.5em;
     --width: 20em;
 }

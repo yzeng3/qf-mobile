@@ -11,7 +11,7 @@ import { FactoryService } from 'src/app/services/factory/factory.service';
 export class TaskModalPage extends BaseUI implements OnInit {
 
   @Input() data: any;
-  private task: {};
+  private item = {};
 
   constructor(
     private loadingCtrl: LoadingController,
@@ -23,6 +23,25 @@ export class TaskModalPage extends BaseUI implements OnInit {
    }
 
   ngOnInit() {
+    this.initTask(this.data.taskId);
+  }
+
+  async initTask(taskId: string) {
+    const load = await super.presentLoading(this.loadingCtrl, '加载数据...');
+    this.factoryService.viewTask('api/task/id', { task_id: taskId },
+      (res: any) => {
+        load.dismiss();
+        this.item = res;
+      }, (err: any) => {
+        load.dismiss();
+        super.presentToast(this.toastCtrl, '加载数据失败,请重新尝试');
+        this.back();
+      });
+  }
+
+
+  back() {
+    this.modalCtrl.dismiss();
   }
 
 }

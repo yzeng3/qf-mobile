@@ -1,31 +1,40 @@
-ion-header{
-    ion-toolbar{
+ion-header {
+    ion-toolbar {
         text-align: center;
-        ion-button{
+
+        ion-button {
             color: white;
             font: 1.2em sans-serif;
         }
     }
 }
 
-ion-list{
+ion-list {
     margin: 0.5em 0 0.5em 0;
     border-radius: 0.7em;
 
-    .choice{
+    .item1 {
+        ion-icon {
+            color: rgb(146, 141, 141);
+            margin-right: 1em;
+        }
+    }
+
+    .choice {
         color: rgb(109, 107, 107);
     }
 
-    .score{
+    .score {
         color: rgb(6, 179, 223);
     }
 
-    .buttons{
-        ion-label{
+    .buttons {
+        ion-label {
             font: 0.8em sans-serif;
             color: rgb(146, 141, 141);
         }
-        ion-button{
+
+        ion-button {
             margin-inline-start: 0.5em;
         }
     }

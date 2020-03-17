@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FactoryService } from 'src/app/services/factory/factory.service';
 import { BaseUI } from 'src/app/common/base-ui';
-import { ModalController } from '@ionic/angular';
+import { ModalController, ToastController } from '@ionic/angular';
 import { DraftModalPage } from '../draft-modal/draft-modal.page';
 import { SupplierModalPage } from '../../common/supplier-modal/supplier-modal.page';
+import { TaskModalPage } from 'src/app/common/task-modal/task-modal.page';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-overdue-task',
@@ -16,7 +18,9 @@ export class OverdueTaskPage extends BaseUI implements OnInit {
 
   constructor(
     private factoryService: FactoryService,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private toastCtrl: ToastController,
+    private router: Router
   ) {
     super();
   }
@@ -30,11 +34,14 @@ export class OverdueTaskPage extends BaseUI implements OnInit {
     this.factoryService.getTasks('api/task/query', { user_id: userId },
       (res: any) => {
         this.tasks = res;
-        console.log(res);
       }, (err: any) => {
         console.log(err);
       }
     );
+  }
+
+  change(taskId: string) {
+    this.router.navigate(['task/detail', taskId]);
   }
 
   viewModel(id: string) {
@@ -46,7 +53,7 @@ export class OverdueTaskPage extends BaseUI implements OnInit {
   }
 
   detail(id: string) {
-    
+    super.presentModal(this.modalCtrl, TaskModalPage, { taskId: id }, true, 'task-common-modal');
   }
 
   release(id: string) {
@@ -55,6 +62,14 @@ export class OverdueTaskPage extends BaseUI implements OnInit {
 
   delete(id: string) {
 
+  }
+
+  back() {
+    this.router.navigate(['tabs/user']);
+  }
+
+  edit() {
+    super.presentToast(this.toastCtrl, '此功能待开发');
   }
 
 }
