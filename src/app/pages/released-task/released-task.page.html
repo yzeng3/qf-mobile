@@ -1,9 +1,38 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>releasedTask</ion-title>
+    <ion-button (click)="back()" slot="start" expand="block" fill="clear">
+      返回
+    </ion-button>
+    <ion-title>已发布</ion-title>
+    <ion-button (click)="edit()" slot="end" expand="block" fill="clear">
+      管理
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-list lines="none" *ngFor="let task of tasks">
+    <ion-item class="item1">
+      <ion-label>任务单号 {{task.task_id}}</ion-label>
+      <ion-label>¥{{task.expect_amount}}</ion-label>
+      <ion-icon src='../../../assets/icon/countdown.svg'></ion-icon>
+      30 天
+    </ion-item>
+    <ion-item>
+      <ion-label class="choice" (click)="viewModel(task.model_id)">设计稿<ion-icon name="eye-outline"></ion-icon></ion-label>
+      <ion-label class="choice" (click)="viewSupplier(task.supplier_id)">供应商<ion-icon name="eye-outline"></ion-icon></ion-label>
+      <ion-label class="score">评分: {{task.score}}</ion-label>
+    </ion-item>
+
+    <ion-item class="buttons">
+      <ion-label>{{task.create_time}}</ion-label>
+      <ion-button (click)="detail(task.task_id)" slot="end" expand="block" fill="clear" shape="round">
+        查看详情
+      </ion-button>
+      <ion-button (click)="withdraw(task.task_id)" slot="end" expand="block" fill="clear" shape="round">
+        撤回
+      </ion-button>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

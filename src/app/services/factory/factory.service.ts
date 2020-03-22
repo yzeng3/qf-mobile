@@ -144,4 +144,29 @@ export class FactoryService {
     );
   }
 
+  /**
+   * 更新任务单
+   */
+  public updataTask(url: string, body: any, successCallback?: Function, failCallback?: Function) {
+    this.http.post(this.config.apiUrl + url, body, this.httpOptions.headers).subscribe(
+      (res: any) => {
+        successCallback(res);
+      }, (err: HttpErrorResponse) => {
+        failCallback(err);
+      }
+    );
+  }
+
+/**
+ * 查看单个任务单
+ */
+  public withdrawTask(url: string, data: any, successCallback?: Function, failCallback?: Function) {
+    this.http.get(this.config.apiUrl + url, this.httpOptions.headers, data).subscribe(
+      (res: any) => {
+        successCallback(res);
+      }, (err: HttpErrorResponse) => {
+        failCallback(err);
+      }
+    );
+  }
 }

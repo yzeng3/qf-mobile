@@ -1,0 +1,31 @@
+ion-header{
+    ion-toolbar{
+        text-align: center;
+    }
+}
+
+ion-content{
+    ion-list{
+        .scoreBtn{
+            margin-top: 1em;
+            width: 100%;
+            font: 1em sans-serif;
+            height: 2.5em;
+        }
+    }
+}
+
+ion-footer {
+    ion-toolbar {
+        --background: white;
+        color: #000;
+
+        .cancel {
+            margin-left: 2em;
+        }
+        
+        .confirm {
+            margin-right: 2em;
+        }
+    }
+}

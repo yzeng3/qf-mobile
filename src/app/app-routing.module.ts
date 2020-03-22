@@ -47,7 +47,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/generate-task/generate-task.module').then( m => m.GenerateTaskPageModule)
   },
   {
-    path: 'released-task',
+    path: 'tabs/released-task',
     loadChildren: () => import('./pages/released-task/released-task.module').then( m => m.ReleasedTaskPageModule)
   },
   {
@@ -55,7 +55,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/overdue-task/overdue-task.module').then( m => m.OverdueTaskPageModule)
   },
   {
-    path: 'accepted-task',
+    path: 'tabs/accepted-task',
     loadChildren: () => import('./pages/accepted-task/accepted-task.module').then( m => m.AcceptedTaskPageModule)
   },
   {
