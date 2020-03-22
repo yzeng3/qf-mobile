@@ -1,9 +1,39 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>acceptedTask</ion-title>
+    <ion-button (click)="back()" slot="start" expand="block" fill="clear">
+      返回
+    </ion-button>
+    <ion-title>被受理</ion-title>
+    <ion-button (click)="edit()" slot="end" expand="block" fill="clear">
+      管理
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-list lines="none" *ngFor="let f of feedbacks">
+    <ion-item class="item1">
+      <ion-label>受理单号 {{f.feedback_id}}</ion-label>
+      <ion-icon src='../../../assets/icon/countdown.svg'></ion-icon>
+      3 天
+    </ion-item>
+    <ion-item>
+      <ion-label class="choice" (click)="viewTask(f.task_id)">任务单<ion-icon name="eye-outline"></ion-icon></ion-label>
+      <ion-label class="choice" (click)="viewSupplier(f.supplier_id)">受理店家<ion-icon name="eye-outline"></ion-icon></ion-label>
+    </ion-item>
+
+    <ion-item class="buttons">
+      <ion-label>{{f.update_time}}</ion-label>
+      <ion-button (click)="detail(f.task_id)" slot="end" expand="block" fill="clear" shape="round">
+        查看详情
+      </ion-button>
+      <ion-button (click)="order(f.feedback_id)" slot="end" expand="block" fill="clear" shape="round">
+        下单
+      </ion-button>
+      <ion-button (click)="giveUp(f.feedback_id)" slot="end" expand="block" fill="clear" shape="round">
+        放弃
+      </ion-button>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

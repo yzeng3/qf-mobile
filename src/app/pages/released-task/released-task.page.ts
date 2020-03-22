@@ -63,7 +63,7 @@ export class ReleasedTaskPage extends BaseUI implements OnInit {
     const { data } = await modal.onDidDismiss();
     if (data.res) {
       const loading = await super.presentLoading(this.loadingCtrl, '正在撤回');
-      this.factoryService.withdrawTask('api/released/task/withdraw', { task_id: id },
+      this.factoryService.withdrawTask('api/released/task/cancel', { task_id: id },
         (res: any) => {
           loading.dismiss();
           super.presentToast(this.toastCtrl, res.msg, 1500, 'middle', 'success');

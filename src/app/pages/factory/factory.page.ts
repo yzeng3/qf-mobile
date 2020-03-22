@@ -205,7 +205,7 @@ export class FactoryPage extends BaseUI implements OnInit, AfterViewInit {
         myModel.set('model_name', data.name);
         myModel.set('score', '100');
         myModel.set('category', this.modelName);
-        myModel.set('belong', '主页设计');
+        myModel.set('belong', '50');
         for (const item of this.fac.moreDesign[0].fixed) {
           myModel.set(item.opt_header, item.opt_name);
         }
@@ -232,6 +232,10 @@ export class FactoryPage extends BaseUI implements OnInit, AfterViewInit {
           (res: any) => {
             if (res.code === 1) {
               loading.dismiss();
+              // 清空记录
+              this.fac.colorId = '0';
+              this.fac.moreDesign = [];
+              this.fac.designDraft = [];
               this.router.navigate(['tabs/draft']);
               super.presentToast(this.toastCtrl, res.msg, 1500, 'middle', 'primary');
             } else {

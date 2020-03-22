@@ -157,10 +157,36 @@ export class FactoryService {
     );
   }
 
-/**
- * 查看单个任务单
- */
+  /**
+   * 查看单个任务单
+   */
   public withdrawTask(url: string, data: any, successCallback?: Function, failCallback?: Function) {
+    this.http.get(this.config.apiUrl + url, this.httpOptions.headers, data).subscribe(
+      (res: any) => {
+        successCallback(res);
+      }, (err: HttpErrorResponse) => {
+        failCallback(err);
+      }
+    );
+  }
+
+  /**
+   * 查看所有反馈单
+   */
+  public getFeedback(url: string, data: any, successCallback?: Function, failCallback?: Function) {
+    this.http.get(this.config.apiUrl + url, this.httpOptions.headers, data).subscribe(
+      (res: any) => {
+        successCallback(res);
+      }, (err: HttpErrorResponse) => {
+        failCallback(err);
+      }
+    );
+  }
+
+  /**
+   * 撤销反馈单
+   */
+  public giveUp(url: string, data: any, successCallback?: Function, failCallback?: Function) {
     this.http.get(this.config.apiUrl + url, this.httpOptions.headers, data).subscribe(
       (res: any) => {
         successCallback(res);
