@@ -62,7 +62,7 @@ export class AcceptedTaskPage extends BaseUI implements OnInit {
     const { data } = await modal.onDidDismiss();
     if (data.res) {
       const loading = await super.presentLoading(this.loadingCtrl, '正在撤销');
-      this.factoryService.giveUp('api/feedback/cancel', { feedback_id: id },
+      this.factoryService.updateFeedback('api/feedback/cancel', { feedback_id: id },
         (res: any) => {
           loading.dismiss();
           super.presentToast(this.toastCtrl, res.msg, 1500, 'middle', 'success');

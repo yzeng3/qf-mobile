@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item lines="none">
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-input type="text" class="search" clearInput="true" autofocus="true" autocomplete="true" 
+      (ionChange)="getInputValue($event)">
+        <ion-icon class="search-ion" name="search-outline"></ion-icon>
+      </ion-input>
+      <ion-button class="search-btn" (click)="search()" expand="block" fill="clear" shape="round">
+        搜索
+      </ion-button>
+      <ion-icon class="camera-ion" slot="end" name="camera-outline"></ion-icon>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+</ion-content>

@@ -184,9 +184,9 @@ export class FactoryService {
   }
 
   /**
-   * 撤销反馈单
+   * 更新反馈单反馈单状态
    */
-  public giveUp(url: string, data: any, successCallback?: Function, failCallback?: Function) {
+  public updateFeedback(url: string, data: any, successCallback?: Function, failCallback?: Function) {
     this.http.get(this.config.apiUrl + url, this.httpOptions.headers, data).subscribe(
       (res: any) => {
         successCallback(res);

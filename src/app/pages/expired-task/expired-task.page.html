@@ -1,9 +1,38 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>expiredTask</ion-title>
+    <ion-button (click)="back()" slot="start" expand="block" fill="clear">
+      返回
+    </ion-button>
+    <ion-title>已过期</ion-title>
+    <ion-button (click)="edit()" slot="end" expand="block" fill="clear">
+      管理
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-list lines="none" *ngFor="let f of feedbacks">
+    <ion-item class="item1">
+      <ion-label>过期单号 {{f.feedback_id}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label class="choice" (click)="viewTask(f.task_id)">任务单<ion-icon name="eye-outline"></ion-icon></ion-label>
+      <ion-label class="choice" (click)="viewSupplier(f.supplier_id)">受理店家<ion-icon name="eye-outline"></ion-icon></ion-label>
+    </ion-item>
+
+    <ion-item class="buttons">
+      <ion-label>{{f.update_time}}</ion-label>
+      <ion-button (click)="detail(f.task_id)" slot="end" expand="block" fill="clear" shape="round">
+        查看详情
+      </ion-button>
+      <ion-button (click)="again(f.feedback_id)" slot="end" expand="block" fill="clear" shape="round">
+        重新交易
+      </ion-button>
+      <ion-button (click)="delete(f.feedback_id)" slot="end" expand="block" fill="clear" shape="round">
+        彻底删除
+      </ion-button>
+    </ion-item>
+  </ion-list>
 
 </ion-content>
+

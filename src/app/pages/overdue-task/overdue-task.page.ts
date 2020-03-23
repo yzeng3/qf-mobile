@@ -78,7 +78,7 @@ export class OverdueTaskPage extends BaseUI implements OnInit {
 
   async delete(id: string) {
     const modal = await super.presentModal(this.modalCtrl, CancelPage,
-      { title: '退出提示', text: '您是否确认删除?' }, false, 'cancel-modal');
+      { title: '退出提示', text: '您确认删除吗?' }, false, 'cancel-modal');
     const { data } = await modal.onDidDismiss();
     if (data.res) {
       const loading = await super.presentLoading(this.loadingCtrl, '正在删除');

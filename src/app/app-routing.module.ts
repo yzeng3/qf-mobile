@@ -65,6 +65,10 @@ const routes: Routes = [
   {
     path: 'tabs/expired-task',
     loadChildren: () => import('./pages/expired-task/expired-task.module').then( m => m.ExpiredTaskPageModule)
+  },
+  {
+    path: 'search',
+    loadChildren: () => import('./pages/search/search.module').then( m => m.SearchPageModule)
   }
 ];
 @NgModule({

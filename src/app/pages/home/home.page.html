@@ -3,7 +3,7 @@
     <ion-button (click)="scan()" expand="block" fill="clear" shape="round">
       <ion-icon name="scan-outline"></ion-icon>
     </ion-button>
-    <ion-input type="text" class="goSearch" (click)="goSearch()" readonly>
+    <ion-input type="text" class="goSearch" [routerLink]="['/search']" routerLinkActive="router-link-active"  readonly>
       <ion-icon name="search-outline"></ion-icon> 
       <ion-label class="iplaceholder"> 奇服搜索</ion-label> 
       <ion-icon name="camera-outline"></ion-icon>
