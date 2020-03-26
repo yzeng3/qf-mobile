@@ -37,3 +37,17 @@ ion-header{
         }
     }
 }
+
+ion-content{
+    ion-list{
+
+        margin: 0.3em 0em 1em 0em;
+        border-radius: 0.3em;
+
+        .logo{
+            height: 3em;
+            width: 3em;
+            margin-right: 2em;
+        }
+    }
+}

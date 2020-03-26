@@ -18,4 +18,15 @@
 
 <ion-content>
 
+  <ion-list *ngFor="let p of products" lines="none" (click)="viewProduct(p.product_id)">
+    <ion-item>
+      <ion-label>{{p.product_name}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-img class="logo" [src]="config.apiUrl + p.logo"></ion-img>
+      <ion-label>¥ {{p.price}}</ion-label>
+      <ion-label>{{p.product_description}}</ion-label>
+    </ion-item>
+  </ion-list>
+
 </ion-content>

@@ -1,0 +1,104 @@
+<ion-content>
+
+  <div class="back" [routerLink]="['/search']" routerLinkActive="router-link-active" >
+    <ion-icon name="arrow-back-outline"></ion-icon>
+  </div>
+
+  <div class="header-btn">
+    <ion-item lines="none">
+        <ion-icon class="cart" name="cart-outline"></ion-icon>      
+        <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+    </ion-item>
+  </div>
+
+  <div class="images">
+    <ion-slides mode="md" pager="md" scrollbar="md">
+      <ion-slide *ngFor="let pic of pictures">
+        <ion-img [src]="config.apiUrl + pic.picture_url"></ion-img>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <ion-list class="module" lines="none">
+    <ion-item>
+      <ion-label>{{product.product_name}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{product.product_description}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-list class="module" lines="none">
+    <ion-item>
+      <ion-label class="gray">选择</ion-label>
+      <ion-label class="black">颜色尺码</ion-label>
+      <ion-button class="gray-btn"  (click)="onClick()" slot="end" expand="block" fill="clear" shape="round">
+        完善尺码 >
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-list class="module" lines="none">
+    <ion-item>
+      <ion-label class="gray">参数</ion-label>
+      <ion-label class="black">品牌 材质...</ion-label>
+      <ion-button class="gray-btn"  (click)="onClick()" slot="end" expand="block" fill="clear" shape="round">
+        查看详情 >
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-list class="module" lines="none">
+    <ion-item>
+      <ion-label class="black">宝贝评价（212121）</ion-label>
+      <ion-button class="gray-btn"  (click)="onClick()" slot="end" expand="block" fill="clear" shape="round">
+        查看详情 >
+      </ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-button class="label-btn"  (click)="onClick()" expand="block" shape="round">
+        尺码准确(212)
+      </ion-button>
+      <ion-button class="label-btn"  (click)="onClick()" expand="block" shape="round">
+        漂亮(4432)
+      </ion-button>
+      <ion-button class="label-btn"  (click)="onClick()" expand="block" shape="round">
+        五星赞(3287)
+      </ion-button>
+    </ion-item>
+    <ion-item>
+        <ion-avatar slot="start">
+          <img src="../../../assets/avatar/programmer.svg"  />
+        </ion-avatar>
+        <ion-label class="gray">程序猿**</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label class="black">上身效果好，适合四个季节，很棒，给五星好评了！</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-item>
+    <ion-tab-button tab="home">
+      <ion-icon src="../../../assets/icon/supplier-logo.svg"></ion-icon>
+      <ion-label>店铺</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="home">
+      <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+      <ion-label>客服</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="home">
+      <ion-icon src="../../../assets/icon/collection-1.svg"></ion-icon>
+      <ion-label>收藏</ion-label>
+    </ion-tab-button>
+    <ion-button class="footer-btn1" (click)="addToCart()" expand="block"  shape="round">
+      加入购物车
+    </ion-button>
+    <ion-button class="footer-btn2" (click)="buyNow()" expand="block"  shape="round">
+      立即购买
+    </ion-button>
+  </ion-item>
+  </ion-toolbar>
+</ion-footer>
