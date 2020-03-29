@@ -155,4 +155,23 @@
     </ion-slide>
   </ion-slides>
 
+  <ion-item class="product" lines="none">
+    <ion-grid >
+      <ion-row>
+        <ion-col size="auto" *ngFor="let p of products" >
+          <ion-card (click)="viewProduct(p.product_id)">
+            <ion-card-content>
+              <ion-img [src]="config.apiUrl + p.logo"></ion-img>
+              <ion-label>{{p.product_name}}</ion-label>
+              <ion-item lines="none">
+                <ion-label class="price">¥ {{p.price}}</ion-label>
+                <ion-label class="style">{{p.main_style}}</ion-label>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
 </ion-content>

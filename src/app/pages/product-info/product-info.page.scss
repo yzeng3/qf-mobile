@@ -1,54 +1,57 @@
-ion-content{
+ion-content {
 
-    .back{
-        z-index:999;
+    .back {
+        z-index: 999;
         position: fixed;
         left: 0;
-        ion-icon{
+
+        ion-icon {
             width: 2em;
             height: 1.8em;
             color: #ffffff;
         }
     }
 
-    .header-btn{
-        z-index:999;
+    .header-btn {
+        z-index: 999;
         position: fixed;
         right: 0;
-        ion-item{
-            --background: rgba(0,0,0,0.2);
-            ion-icon{
+
+        ion-item {
+            --background: rgba(0, 0, 0, 0.2);
+
+            ion-icon {
                 color: #ffffff;
             }
 
-            .cart{
+            .cart {
                 margin-right: 0.3em;
             }
         }
     }
 
-    .images{
-        z-index:1;
+    .images {
+        z-index: 1;
     }
 
-    .module{
+    .module {
         margin: 0 0 0.8em 0;
 
-        .gray{
+        .gray {
             color: rgb(114, 110, 110);
             font: 0.8em sans-serif;
         }
 
-        .black{
+        .black {
             font: 0.8em sans-serif;
         }
 
-        .gray-btn{
+        .gray-btn {
             font: 0.8em sans-serif;
             color: rgb(114, 110, 110);
         }
 
-        .label-btn{
+        .label-btn {
             font: 0.8em sans-serif;
             color: rgb(114, 110, 110);
             --background: #f8e9e9;
@@ -58,15 +61,21 @@ ion-content{
 
 }
 
-ion-footer{
-    ion-toolbar{
+ion-footer {
+    ion-toolbar {
         --background: #e5e6e8;
-        .footer-btn1{
+
+        .gray {
+            color: rgb(114, 110, 110);
+        }
+
+        .footer-btn1 {
             font: 0.9em sans-serif;
             height: 2.5em;
             --background: #f7be54;
         }
-        .footer-btn2{
+
+        .footer-btn2 {
             font: 0.9em sans-serif;
             height: 2.5em;
             --background: #f7620c;

@@ -1,0 +1,38 @@
+ion-content{
+
+    .box{
+        ion-list{
+            background: #e5e6e8;
+            ion-item{
+                --background: #e5e6e8;
+            }
+        }
+        margin-top: 5em;
+        text-align: center;
+        width: 100%;
+
+        .msg{
+            text-align: center;
+            font: 1em sans-serif;
+            color: rgb(255, 91, 41);
+        }
+    }
+
+    form{
+        margin-top: 2em;
+        ion-item{
+            ion-label{
+                width: 5em;
+                text-align: right;
+            }
+        }
+
+        .submit {
+            margin-top: 1.5em;
+            height: 3em;
+            width: 100%;
+            --border-radius: 20px;
+        }
+    }
+
+}

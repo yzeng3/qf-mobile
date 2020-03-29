@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FactoryService } from 'src/app/services/factory/factory.service';
-import { ModalController, ToastController, LoadingController } from '@ionic/angular';
+import { ModalController, ToastController, LoadingController, ActionSheetController } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
 import { BaseUI } from 'src/app/common/base-ui';
 import { MyConfig } from 'src/app/data/config';
@@ -22,6 +22,7 @@ export class ProductInfoPage extends BaseUI implements OnInit {
     private modalCtrl: ModalController,
     private toastCtrl: ToastController,
     private loadingCtrl: LoadingController,
+    private actionSheetController: ActionSheetController,
     private router: Router,
     private config: MyConfig
   ) {
@@ -37,7 +38,6 @@ export class ProductInfoPage extends BaseUI implements OnInit {
   initPage() {
     this.factoryService.productGet('api/product/detail', { product_id: this.pid },
       (res: any) => {
-        console.log(res);
         this.product = res;
       }, (err: any) => {
         console.log(err);
@@ -48,7 +48,6 @@ export class ProductInfoPage extends BaseUI implements OnInit {
   initPictures() {
     this.factoryService.productGet('api/product/picture', { product_id: this.pid },
       (res: any) => {
-        console.log(res);
         this.pictures = res;
       }, (err: any) => {
         super.presentToast(this.toastCtrl, '请检查网络');
@@ -62,6 +61,30 @@ export class ProductInfoPage extends BaseUI implements OnInit {
 
   buyNow() {
     super.presentToast(this.toastCtrl, '此功能待开发');
+  }
+
+  async share() {
+    const content = [{
+      text: 'QQ',
+      icon: 'share',
+      handler: () => {
+        console.log('QQ');
+      }
+    }, {
+      text: '微信',
+      icon: 'share',
+      handler: () => {
+        console.log('微信');
+      }
+    }, {
+      text: '取消',
+      icon: 'close',
+      role: 'cancel',
+      handler: () => {
+        console.log('Cancel clicked');
+      }
+    }];
+    const actionSheet = await super.presentActionSheet(this.actionSheetController, '分享', content, true, '');
   }
 
 }

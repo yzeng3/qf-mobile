@@ -1,9 +1,42 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
     <ion-title>注册</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <div class="box">
+    <ion-list lines="none">
+      <img id="face" src="../../../assets/icon/smileface.svg" alt="logo">
+      <ion-item>
+        <ion-label class="msg">{{message}}</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label>用户名 <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input #username required formControlName="username" type="text" (ionChange)="checkUser(username)"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>密码 <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input #password required formControlName="password" type="password" (ionBlur)="checkPassword(password)"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>确认密码 <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input #password2 required formControlName="password2" type="password" (ionChange)="checkPassword2(password, password2)"></ion-input>
+    </ion-item>
+    <ion-button block color="primary" type="submit" class="submit" [disabled]="registerForm.invalid">
+      注册
+    </ion-button>
+  </form>
 
 </ion-content>

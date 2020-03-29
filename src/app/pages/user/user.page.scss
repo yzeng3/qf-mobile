@@ -84,3 +84,33 @@
     height: 120px; 
     width: 100%;
 }
+
+.product {
+    --padding-start: 0;
+    --inner-padding-end: 0;
+    --background: #e5e6e8;
+    ion-col{
+        padding: 0;
+        ion-card{
+            margin-inline-start: 5px;
+            margin-inline-end: 5px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            width: 13.5em;
+
+            ion-item{
+                --padding-start: 0px;
+            }
+            .price{
+                font: 1em sans-serif;
+                color: #f5611d;
+            }
+
+            .style{
+                font: 0.5em sans-serif;
+                color: rgb(99, 97, 97);
+            }
+        }
+
+    }
+}

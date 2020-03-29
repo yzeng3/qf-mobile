@@ -1,4 +1,4 @@
-import { ToastController, LoadingController, ModalController, PopoverController } from '@ionic/angular';
+import { ToastController, LoadingController, ModalController, PopoverController, ActionSheetController } from '@ionic/angular';
 
 
 /**
@@ -72,7 +72,7 @@ export abstract class BaseUI {
      * @param params 待传的参数
      * @param ev 需要传递的动画事件
      */
-    protected async presentPopover(popoverController: PopoverController, page: any, params: any, backdrop: boolean, css: any, ev?: any, ) {
+    protected async presentPopover(popoverController: PopoverController, page: any, params: any, backdrop: boolean, css: any, ev?: any) {
         const popover = await popoverController.create({
             component: page,
             componentProps: { data: params },
@@ -85,5 +85,21 @@ export abstract class BaseUI {
         });
         await popover.present();
         return popover;
+    }
+
+    protected async presentActionSheet(actionSheetController: ActionSheetController, head: string, content: any,
+                                       backdrop: boolean, css: any, ev?: any) {
+        const actionSheet = await actionSheetController.create({
+            header: head,
+            buttons: content,
+            mode: 'ios',            // iOS模式
+            keyboardClose: true,    // 打开时键盘自动关闭
+            backdropDismiss: backdrop, // 点击背景不能关闭模态
+            translucent: false,     // 弹出框是否半透明
+            cssClass: css,
+            enterAnimation: ev
+        });
+        await actionSheet.present();
+        return actionSheet;
     }
 }

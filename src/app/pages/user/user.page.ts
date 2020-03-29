@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FactoryService } from 'src/app/services/factory/factory.service';
+import { MyConfig } from 'src/app/data/config';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -8,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class UserPage implements OnInit {
 
   private nickname = '设置昵称*';
+  private products = [];
 
   private logisticsInfo = {
     src: 'https://img.alicdn.com/imgextra/i2/1669409267/O1CN013eisdd2IKKvW1znKu_!!1669409267.jpg_430x430q90.jpg',
@@ -23,9 +27,25 @@ export class UserPage implements OnInit {
     browse: '50'
   };
 
-  constructor() { }
+  constructor(private factoryService: FactoryService, private config: MyConfig, private router: Router) { }
 
   ngOnInit() {
+    this.getRecommendProds();
+  }
+
+  getRecommendProds() {
+    this.factoryService.searchProduct('api/product/search', { name: '男士休闲外套' },
+      (res: any) => {
+        this.products = res;
+
+      }, (err: any) => {
+        console.log(err);
+      }
+    );
+  }
+
+  viewProduct(id: string) {
+    this.router.navigate(['product-info', id]);
   }
 
 }

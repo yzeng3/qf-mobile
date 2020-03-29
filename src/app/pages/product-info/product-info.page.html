@@ -1,6 +1,6 @@
 <ion-content>
 
-  <div class="back" [routerLink]="['/search']" routerLinkActive="router-link-active" >
+  <div class="back" [routerLink]="['/tabs/home']" routerLinkActive="router-link-active" >
     <ion-icon name="arrow-back-outline"></ion-icon>
   </div>
 
@@ -83,15 +83,15 @@
     <ion-item>
     <ion-tab-button tab="home">
       <ion-icon src="../../../assets/icon/supplier-logo.svg"></ion-icon>
-      <ion-label>店铺</ion-label>
+      <ion-label class="gray">店铺</ion-label>
     </ion-tab-button>
     <ion-tab-button tab="home">
       <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-      <ion-label>客服</ion-label>
+      <ion-label class="gray">客服</ion-label>
     </ion-tab-button>
-    <ion-tab-button tab="home">
-      <ion-icon src="../../../assets/icon/collection-1.svg"></ion-icon>
-      <ion-label>收藏</ion-label>
+    <ion-tab-button (click)="share()">
+      <ion-icon name="arrow-redo-outline"></ion-icon>
+      <ion-label class="gray">分享</ion-label>
     </ion-tab-button>
     <ion-button class="footer-btn1" (click)="addToCart()" expand="block"  shape="round">
       加入购物车

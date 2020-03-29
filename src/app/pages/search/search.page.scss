@@ -1,53 +1,65 @@
-ion-header{
-    ion-toolbar{
+ion-header {
+    ion-toolbar {
 
-        ion-buttons{
+        ion-buttons {
             margin-right: auto;
             color: #626364;
         }
 
         padding: 20px 0 20px 0;
         --background: #ffffff;
+
         .search-ion {
             height: 25px;
             width: 25px;
             color: #e5e6e8;
         }
-        .camera-ion{
+
+        .camera-ion {
             height: 25px;
             width: 25px;
             color: #626364;
             margin-left: auto;
         }
+
         .search {
             border-radius: 20px;
             height: 2.3em;
             --background: #f1f5fc;
+
             ion-icon {
                 padding-left: 10px;
                 color: #8d9094 !important;
             }
-            .iplaceholder{
+
+            .iplaceholder {
                 width: 100%;
                 color: #737577;
             }
         }
-        .search-btn{
+
+        .search-btn {
             font: 1.1em sans-serif;
         }
     }
 }
 
-ion-content{
-    ion-list{
+ion-content {
+    ion-list {
 
         margin: 0.3em 0em 1em 0em;
         border-radius: 0.3em;
 
-        .logo{
+        .logo {
             height: 3em;
             width: 3em;
             margin-right: 2em;
         }
+    }
+}
+
+.ios {
+    ion-back-button {
+        color:#626364;
     }
 }
