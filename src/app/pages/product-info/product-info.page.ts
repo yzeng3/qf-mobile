@@ -63,6 +63,10 @@ export class ProductInfoPage extends BaseUI implements OnInit {
     super.presentToast(this.toastCtrl, '此功能待开发');
   }
 
+  goStore(id: string) {
+    this.router.navigate(['store', id]);
+  }
+
   async share() {
     const content = [{
       text: 'QQ',

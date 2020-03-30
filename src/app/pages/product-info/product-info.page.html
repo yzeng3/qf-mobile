@@ -81,7 +81,7 @@
 <ion-footer>
   <ion-toolbar>
     <ion-item>
-    <ion-tab-button tab="home">
+    <ion-tab-button (click)="goStore(product.supplier_id)">
       <ion-icon src="../../../assets/icon/supplier-logo.svg"></ion-icon>
       <ion-label class="gray">店铺</ion-label>
     </ion-tab-button>

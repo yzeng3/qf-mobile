@@ -73,6 +73,10 @@ const routes: Routes = [
   {
     path: 'product-info/:pid',
     loadChildren: () => import('./pages/product-info/product-info.module').then( m => m.ProductInfoPageModule)
+  },
+  {
+    path: 'store/:sid',
+    loadChildren: () => import('./pages/store/store.module').then( m => m.StorePageModule)
   }
 ];
 @NgModule({
