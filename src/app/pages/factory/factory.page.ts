@@ -13,6 +13,7 @@ import { QfDictionary } from 'src/app/services/util/qfDictionary';
 import { InputModalPage } from 'src/app/common/input-modal/input-modal.page';
 import { FactoryService } from 'src/app/services/factory/factory.service';
 import { Clone } from 'src/app/services/util/clone';
+import { ScoreModalPage } from 'src/app/common/score-modal/score-modal.page';
 
 @Component({
   selector: 'app-factory',
@@ -36,6 +37,7 @@ export class FactoryPage extends BaseUI implements OnInit, AfterViewInit {
   private mapLst = [-1, -1];    // 正背面贴图ID
   private mapIndex: number;     // 贴图编号
   private signature = '';       // 签名
+  private score = 70;           // 评分
 
   constructor(
     activedRoute: ActivatedRoute,
@@ -156,24 +158,40 @@ export class FactoryPage extends BaseUI implements OnInit, AfterViewInit {
   }
 
   // 实时评分
-  score() {
+  async getScore() {
     if (this.fac.moreDesign.length === 0) {
       super.presentToast(this.toastCtrl, '请将->[更多设计]->里的参数填写完成,否则无法计算评分', 2100, 'middle');
     } else {
-      this.fac.designDraft = this.fac.moreDesign;
-      console.log(this.fac.moreDesign);
-      // 存入颜色选择
-      const len = this.fac.designDraft.length;
-      const myColor = { itemNo: len.toString(), itemName: '颜色', supplement: '选择的服装颜色', option: this.picture };
-      this.fac.designDraft.push(myColor);
-
-      // 存入个性签名
-      const mySignature = { itemNo: (len + 1).toString(), itemName: '签名', supplement: '服装上的个性签名', option: this.signature };
-      this.fac.designDraft.push(mySignature);
-
-      // 存入贴图选择
-      const myMaps = { itemNo: (len + 2).toString(), itemName: '贴图', supplement: '正背面贴图', option: this.mapLst };
-      this.fac.designDraft.push(myMaps);
+      // 生成模型数据
+      const myDraft = new QfDictionary();
+      for (const item of this.fac.moreDesign[0].fixed) {
+        myDraft.set(item.opt_header, item.opt_name);
+      }
+      const temClone = Clone.deepClone(this.fac.moreDesign); // 克隆一份
+      temClone.shift(); // 去掉第一个
+      for (const item of temClone) {
+        myDraft.set(item.item_header, item.option);
+      }
+      myDraft.set('type', 'draft'); // 评分类型为设计稿
+      myDraft.set('image_front', this.factory[this.picture].front);
+      myDraft.set('image_back', this.factory[this.picture].back);
+      // 正面与背面的截图
+      myDraft.set('img_f', this.factory[this.picture].front);
+      myDraft.set('img_b', this.factory[this.picture].back);
+      myDraft.set('signature', this.signature);
+      if (this.mapLst[0] >= 0) {
+        myDraft.set('printing_front', Factory.mapFactory[this.mapLst[0]].itemPath);
+      } else {
+        myDraft.set('printing_front', '');
+      }
+      if (this.mapLst[1] >= 0) {
+        myDraft.set('printing_back', Factory.mapFactory[this.mapLst[1]].itemPath);
+      } else {
+        myDraft.set('printing_back', '');
+      }
+      const modal = await super.presentModal(this.modalCtrl, ScoreModalPage, myDraft.item, false, 'score-common-modal');
+      const { data } = await modal.onDidDismiss();
+      this.score = data.res;
     }
   }
 

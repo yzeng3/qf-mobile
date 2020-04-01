@@ -1,0 +1,18 @@
+ion-header {
+    ion-toolbar {
+        --background: white;
+        color: #000;
+
+        ion-button{
+            font: 1em sans-serif;
+        }
+    }
+}
+
+ion-content {
+    .pie {
+        margin-top: 1em;
+        width: 22em;
+        height: 25em; 
+    }
+}

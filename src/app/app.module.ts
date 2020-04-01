@@ -19,6 +19,7 @@ import { InputModalPage } from './common/input-modal/input-modal.page';
 import { DraftModalPage } from './pages/draft-modal/draft-modal.page';
 import { SupplierModalPage } from './common/supplier-modal/supplier-modal.page';
 import { TaskModalPage } from './common/task-modal/task-modal.page';
+import { ScoreModalPage } from './common/score-modal/score-modal.page';
 // import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 // export class MyHammerConfig extends HammerGestureConfig {
 //   overrides = {
@@ -35,11 +36,11 @@ import { TaskModalPage } from './common/task-modal/task-modal.page';
   declarations: [
     AppComponent, ColorPage, MapPage, SignaturePage,
     MoreDesignPage, CancelPage, InputModalPage, DraftModalPage,
-    SupplierModalPage, TaskModalPage
+    SupplierModalPage, TaskModalPage, ScoreModalPage
   ],
   entryComponents: [
     ColorPage, MapPage, SignaturePage, MoreDesignPage, CancelPage,
-    InputModalPage, DraftModalPage, SupplierModalPage, TaskModalPage
+    InputModalPage, DraftModalPage, SupplierModalPage, TaskModalPage, ScoreModalPage
   ],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
   providers: [
