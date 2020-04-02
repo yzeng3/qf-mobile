@@ -21,7 +21,7 @@ export class Menu {
             typeName: '热门',
             child: [
                 { modelNo: '101', index: '0', modelName: '圆领短袖', picture: 'public/model/man/myldx/myldxbaif.jpg' },
-                { modelNo: '102', index: '1', modelName: '圆领长袖', picture: '' },
+                { modelNo: '102', index: '1', modelName: '圆领长袖', picture: 'public/model/man/mylcx/baif.jpg' },
                 { modelNo: '103', index: '2', modelName: 'polo衫', picture: 'public/model/man/polo/baif.jpg' }
             ]
         },
@@ -30,7 +30,7 @@ export class Menu {
             typeName: '男装',
             child: [
                 { modelNo: '201', index: '0', modelName: '圆领短袖', picture: 'public/model/man/myldx/myldxbaif.jpg' },
-                { modelNo: '202', index: '1', modelName: '圆领长袖', picture: '' },
+                { modelNo: '202', index: '1', modelName: '圆领长袖', picture: 'public/model/man/mylcx/baif.jpg' },
                 { modelNo: '203', index: '2', modelName: 'polo衫', picture: 'public/model/man/polo/baif.jpg' },
             ]
         },
@@ -39,7 +39,7 @@ export class Menu {
             typeName: '女装',
             child: [
                 { modelNo: '301', index: '0', modelName: '圆领短袖', picture: 'public/model/woman/fyldx/fyldxbaif.jpg' },
-                { modelNo: '302', index: '1', modelName: '圆领长袖', picture: '' },
+                { modelNo: '302', index: '1', modelName: '圆领长袖', picture: 'public/model/woman/fylcx/baif.jpg' },
                 { modelNo: '303', index: '2', modelName: 'polo衫', picture: 'public/model/woman/fweiyi/fweiyihuif.jpg' },
             ]
         },
@@ -48,7 +48,7 @@ export class Menu {
             typeName: '童装',
             child: [
                 { modelNo: '401', index: '0', modelName: '圆领短袖', picture: 'public/model/man/myldx/myldxbaif.jpg' },
-                { modelNo: '402', index: '1', modelName: '圆领长袖', picture: '' },
+                { modelNo: '402', index: '1', modelName: '圆领长袖', picture: 'public/model/man/mylcx/baif.jpg' },
                 { modelNo: '403', index: '2', modelName: 'polo衫', picture: 'public/model/man/polo/baif.jpg' },
             ]
         },
@@ -57,7 +57,7 @@ export class Menu {
             typeName: '古风',
             child: [
                 { modelNo: '501', index: '0', modelName: '圆领短袖', picture: 'public/model/man/myldx/myldxbaif.jpg' },
-                { modelNo: '502', index: '1', modelName: '圆领长袖', picture: '' },
+                { modelNo: '502', index: '1', modelName: '圆领长袖', picture: 'public/model/man/mylcx/baif.jpg' },
                 { modelNo: '503', index: '2', modelName: 'polo衫', picture: 'public/model/man/polo/baif.jpg' },
             ]
         }

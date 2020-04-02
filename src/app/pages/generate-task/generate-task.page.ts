@@ -5,6 +5,7 @@ import { ToastController, ModalController, LoadingController } from '@ionic/angu
 import { CancelPage } from 'src/app/common/cancel/cancel.page';
 import { DraftModalPage } from '../draft-modal/draft-modal.page';
 import { FactoryService } from 'src/app/services/factory/factory.service';
+import { ScoreModalPage } from 'src/app/common/score-modal/score-modal.page';
 
 @Component({
   selector: 'app-generate-task',
@@ -21,7 +22,7 @@ export class GenerateTaskPage extends BaseUI implements OnInit {
   private sizeId: string;
   private expectAccount: string;
   private delivery: string;
-  private score: string;
+  private score = ''; // 任务单评分
 
   constructor(
     activedRoute: ActivatedRoute,
@@ -54,27 +55,50 @@ export class GenerateTaskPage extends BaseUI implements OnInit {
     super.presentToast(this.toastCtrl, '此功能待开发');
   }
 
+  async getScore(expectAmount: any, delivery: any, supplement: any) {
+    const load = await super.presentLoading(this.loadingCtrl, '加载数据');
+    this.factoryService.getModelById('api/model', { model_id: this.modelId },
+      async (res: any) => {
+        load.dismiss();
+        const task = res;
+        task.expect_amount = expectAmount.value; // 金额添加进字典
+        task.delivery = delivery.value;
+        task.supplement = supplement.value;
+        task.type = 'task'; // 评分类型为任务单
+        const modal = await super.presentModal(this.modalCtrl, ScoreModalPage, task, false, 'score-common-modal');
+        const { data } = await modal.onDidDismiss();
+        this.score = data.res;
+      }, () => {
+        load.dismiss();
+        super.presentToast(this.toastCtrl, '加载数据失败,请重新尝试');
+      });
+  }
+
   commit(expectAmount: any, delivery: any, supplement: any) {
     if (expectAmount.value.length > 0) {
       if (delivery.value.length > 0) {
-        const data = {
-          user_id: this.userId,
-          model_id: this.modelId,
-          supplier_id: this.supplierId,
-          size_id: '11',
-          expect_amount: expectAmount.value,
-          delivery: delivery.value,
-          score: '95',
-          supplement: supplement.value,
-          status: '1'
-        };
-        this.factoryService.saveTaskData('api/task/save', data,
-        (res: any) => {
-          super.presentToast(this.toastCtrl, res.msg, 1500, 'top', 'primary');
-          this.router.navigate(['tabs/overdue-task']);
-        }, (err: any) => {
-          super.presentToast(this.toastCtrl, '任务单生成失败,请检查网络');
-        });
+        if (this.score.length !== 0) {
+          const data = {
+            user_id: this.userId,
+            model_id: this.modelId,
+            supplier_id: this.supplierId,
+            size_id: '11',
+            expect_amount: expectAmount.value,
+            delivery: delivery.value,
+            score: this.score,
+            supplement: supplement.value,
+            status: '1'
+          };
+          this.factoryService.saveTaskData('api/task/save', data,
+            (res: any) => {
+              super.presentToast(this.toastCtrl, res.msg, 1500, 'top', 'primary');
+              this.router.navigate(['tabs/overdue-task']);
+            }, (err: any) => {
+              super.presentToast(this.toastCtrl, '任务单生成失败,请检查网络');
+            });
+        } else {
+          super.presentToast(this.toastCtrl, '请点击计算评分', 1500, 'middle');
+        }
       } else {
         super.presentToast(this.toastCtrl, '定制时间不能为空', 1500, 'middle');
       }

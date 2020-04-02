@@ -37,7 +37,7 @@ export class FactoryPage extends BaseUI implements OnInit, AfterViewInit {
   private mapLst = [-1, -1];    // 正背面贴图ID
   private mapIndex: number;     // 贴图编号
   private signature = '';       // 签名
-  private score = 70;           // 评分
+  private score = '';           // 评分
 
   constructor(
     activedRoute: ActivatedRoute,
@@ -204,6 +204,7 @@ export class FactoryPage extends BaseUI implements OnInit, AfterViewInit {
       this.fac.colorId = '0';
       this.fac.moreDesign = [];
       this.fac.designDraft = [];
+      this.score = '';
       this.router.navigate(['tabs/design']);
     }
   }
@@ -211,6 +212,8 @@ export class FactoryPage extends BaseUI implements OnInit, AfterViewInit {
   async save() {
     if (this.fac.moreDesign.length === 0) {
       super.presentToast(this.toastCtrl, '请将->[更多设计]->里的参数填写完成,否则不能生成设计稿', 2300, 'middle');
+    } else if (this.score.length === 0) {
+      super.presentToast(this.toastCtrl, '请点击->[实时评分]->完成评分计算,否则不能生成设计稿', 2300, 'middle');
     } else {
       const modal = await super.presentModal(this.modalCtrl, InputModalPage,
         { title: '输入', text: '设计稿名称,最长20个字包括符合' }, false, 'input-modal');
@@ -221,7 +224,7 @@ export class FactoryPage extends BaseUI implements OnInit, AfterViewInit {
         const myModel = new QfDictionary();
         myModel.set('user_id', window.localStorage.getItem('user_id'));
         myModel.set('model_name', data.name);
-        myModel.set('score', '100');
+        myModel.set('score', this.score);
         myModel.set('category', this.modelName);
         myModel.set('belong', '50');
         for (const item of this.fac.moreDesign[0].fixed) {

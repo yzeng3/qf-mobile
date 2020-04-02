@@ -46,7 +46,7 @@
       <ion-label>补充说明</ion-label>
       <ion-input #supplement type="text" placeholder="比如, 定制时间可以是2-3个月..." value=""></ion-input>
     </ion-item>
-    <ion-button (click)="getScore()" expand="block" fill="clear" shape="round">
+    <ion-button (click)="getScore(expectAmount, delivery, supplement)" expand="block" fill="clear" shape="round">
       计算评分
     </ion-button>
   </ion-list>

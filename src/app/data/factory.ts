@@ -275,7 +275,9 @@ export class Factory {
                         { opt_id: '6', opt_header: 'suitable', opt_type: '适用对象', opt_name: '青少年' },
                         { opt_id: '7', opt_header: 'season', opt_type: '适用季节', opt_name: '四季' },
                         { opt_id: '8', opt_header: 'sleeve', opt_type: '袖长', opt_name: '长袖' },
-                        { opt_id: '9', opt_header: 'time_to_market', opt_type: '上市时间', opt_name: '2020年春季' }
+                        { opt_id: '9', opt_header: 'time_to_market', opt_type: '上市时间', opt_name: '2020年春季' },
+                        { opt_id: '10', opt_header: 'reference_price', opt_type: '参考价格', opt_name: '150' },
+                        { opt_id: '11', opt_header: 'reference_delivery', opt_type: '参考定制时间', opt_name: '60' },
                     ]
                 },
                 {
