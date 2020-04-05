@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>参数选择</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let m of model">
+      <ion-label class="title">{{m.key}}:</ion-label>
+      <ion-label class="content">{{m.value}}</ion-label>
+      <ion-label></ion-label>
+    </ion-item>
+
+    <ion-item *ngIf="shellFabricOpts.length > 0">
+      <ion-label class="option-title">面料 <ion-text color="danger">*</ion-text></ion-label>
+      <ion-select value="" placeholder="请选择" cancelText='取消' mode='ios'
+        okText='确认' (ionChange)="getSelectSF($event)" [interfaceOptions]="customOptions">
+        <ion-select-option *ngFor="let opt of shellFabricOpts" value="{{opt.value}}">{{opt.value}}</ion-select-option>
+      </ion-select>
+      <ion-label></ion-label>
+    </ion-item>
+
+    <ion-item *ngIf="sizeOpts.length > 0">
+      <ion-label class="option-title">尺寸 <ion-text color="danger">*</ion-text></ion-label>
+      <ion-select value="" placeholder="请选择" cancelText='取消' mode='ios'
+        okText='确认' (ionChange)="getSelectSize($event)" [interfaceOptions]="customOptions">
+        <ion-select-option *ngFor="let opt of sizeOpts" value="{{opt.value}}">{{opt.value}}</ion-select-option>
+      </ion-select>
+      <ion-label></ion-label>
+    </ion-item>
+
+    <ion-item *ngIf="sleeveLeftColors.length > 0">
+      <ion-label class="option-title">左袖子颜色 <ion-text color="danger">*</ion-text></ion-label>
+      <ion-select value="" placeholder="请选择" cancelText='取消' mode='ios'
+        okText='确认' (ionChange)="getSelect1($event)" [interfaceOptions]="customOptions">
+        <ion-select-option *ngFor="let opt of sleeveLeftColors" value="{{opt.value}}">{{opt.value}}</ion-select-option>
+      </ion-select>
+      <ion-label></ion-label>
+    </ion-item>
+
+    <ion-item *ngIf="sleeveRightColors.length > 0">
+      <ion-label class="option-title">右袖子颜色 <ion-text color="danger">*</ion-text></ion-label>
+      <ion-select value="" placeholder="请选择" cancelText='取消' mode='ios'
+        okText='确认' (ionChange)="getSelect2($event)" [interfaceOptions]="customOptions">
+        <ion-select-option *ngFor="let opt of sleeveRightColors" value="{{opt.value}}">{{opt.value}}</ion-select-option>
+      </ion-select>
+      <ion-label></ion-label>
+    </ion-item>
+
+    <ion-item *ngIf="trouserLeftColors.length > 0">
+      <ion-label class="option-title">左裤腿颜色 <ion-text color="danger">*</ion-text></ion-label>
+      <ion-select value="" placeholder="请选择" cancelText='取消' mode='ios'
+        okText='确认' (ionChange)="getSelect3($event)" [interfaceOptions]="customOptions">
+        <ion-select-option *ngFor="let opt of trouserLeftColors" value="{{opt.value}}">{{opt.value}}</ion-select-option>
+      </ion-select>
+      <ion-label></ion-label>
+    </ion-item>
+
+    <ion-item *ngIf="trouserRightColors.length > 0">
+      <ion-label class="option-title">右裤腿颜色 <ion-text color="danger">*</ion-text></ion-label>
+      <ion-select value="" placeholder="请选择" cancelText='取消' mode='ios'
+        okText='确认' (ionChange)="getSelect4($event)" [interfaceOptions]="customOptions">
+        <ion-select-option *ngFor="let opt of trouserRightColors" value="{{opt.value}}">{{opt.value}}</ion-select-option>
+      </ion-select>
+      <ion-label></ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-button class="confirm" (click)="confirm()" expand="block">
+    确认并退出
+  </ion-button>
+</ion-footer>

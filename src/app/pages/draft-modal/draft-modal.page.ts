@@ -111,6 +111,10 @@ export class DraftModalPage extends BaseUI implements OnInit {
             this.model.push({ key: '裤长', value: this.tem[i] + '' });
           } else if (i === 'waist_style' && this.tem[i] !== null) {
             this.model.push({ key: '腰型', value: this.tem[i] + '' });
+          } else if (i === 'reference_price' && this.tem[i] !== null) {
+            this.model.push({ key: '参考金额', value: this.tem[i] + '元' });
+          } else if (i === 'reference_delivery' && this.tem[i] !== null) {
+            this.model.push({ key: '参考时间', value: this.tem[i] + '天' });
           } else if (i === 'create_time' && this.tem[i] !== null) {
             this.model.push({ key: '创建时间', value: this.tem[i] + '' });
           }

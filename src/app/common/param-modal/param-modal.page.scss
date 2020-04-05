@@ -1,0 +1,21 @@
+ion-header {
+    ion-toolbar {
+        --background: white;
+        color: #000;
+        text-align: center;
+    }
+}
+
+ion-content{
+    ion-list{
+        .content {
+            color: rgb(97, 94, 94);
+        }
+    }
+}
+
+ion-footer {
+    .confirm{
+        --background: rgb(75, 37, 6);
+    }
+}

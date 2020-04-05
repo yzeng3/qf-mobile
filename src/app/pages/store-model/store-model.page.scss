@@ -1,0 +1,27 @@
+.type {
+    background: #e5e6e8;
+
+    ion-item {
+        --padding-start: 0px;
+        --inner-padding-end: 0px;
+        margin: 1em 7em 2em 7em;
+        box-shadow: 2px 2px 10px #c0c4cc;
+        border-radius: 0.3em;
+    }
+
+    ion-img {
+        width: 8.5em;
+        height: 11em;
+    }
+
+    .model {
+        margin: auto;
+        text-align: center;
+
+        ion-label {
+            color: #454647;
+            font-size: 1.3rem;
+            font-family: cursive;
+        }
+    }
+}

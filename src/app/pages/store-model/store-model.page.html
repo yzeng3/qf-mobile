@@ -8,5 +8,12 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-list class="type" *ngFor="let m of models">
+    <ion-item lines="none" (click)="goStoreFactory(m.model_id)">
+      <ion-list class="model">
+        <ion-label>{{m.category}}</ion-label>
+        <ion-img [src]="config.apiUrl + m.img_f"></ion-img>
+      </ion-list>
+    </ion-item>
+  </ion-list>
 </ion-content>

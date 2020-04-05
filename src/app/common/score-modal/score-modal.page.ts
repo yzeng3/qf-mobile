@@ -33,25 +33,25 @@ export class ScoreModalPage extends BaseUI implements OnInit {
     let specialScore = 0;
     let deduction = 0;
     // 特色 +5
-    if (this.data.sleeve_left_color !== undefined) {
+    if (this.data.sleeve_left_color !== undefined && this.data.sleeve_left_color !== null) {
       if (this.data.sleeve_left_color !== '保持原样' && this.data.sleeve_left_color.length > 0) {
         specialScore = specialScore + 5;
       }
     }
     // 特色 +5
-    if (this.data.sleeve_right_color !== undefined) {
+    if (this.data.sleeve_right_color !== undefined && this.data.sleeve_right_color !== null) {
       if (this.data.sleeve_right_color !== '保持原样' && this.data.sleeve_left_color.length > 0) {
         specialScore = specialScore + 5;
       }
     }
     // 特色 +5
-    if (this.data.trouser_left_color !== undefined) {
+    if (this.data.trouser_left_color !== undefined && this.data.trouser_left_color !== null) {
       if (this.data.trouser_left_color !== '保持原样' && this.data.trouser_left_color.length > 0) {
         specialScore = specialScore + 5;
       }
     }
     // 特色 +5
-    if (this.data.trouser_right_color !== undefined) {
+    if (this.data.trouser_right_color !== undefined && this.data.trouser_right_color !== null) {
       if (this.data.trouser_right_color !== '保持原样' && this.data.trouser_right_color.length > 0) {
         specialScore = specialScore + 5;
       }

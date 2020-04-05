@@ -26,7 +26,6 @@ export class MapPage implements OnInit {
   }
 
   confirm() {
-    // this.factory.mapId = this.id;
     this.modalCtrl.dismiss({ _id: this.mapId });
   }
 

@@ -1,0 +1,40 @@
+ion-header {
+    ion-toolbar {
+        --background: white !important;
+        text-align: center;
+        font-family: cursive;
+        color: #000;
+    }
+}
+
+ion-content {
+    ion-list {
+        padding: 0.5em 0 0.5em 0;
+    }
+
+    .color {
+        margin-left: 1em;
+        width: 2em;
+        height: 2em;
+    }
+
+    ion-icon {
+        margin-right: 1em;
+        color: rgb(255, 95, 31);
+    }
+}
+
+ion-footer {
+    ion-toolbar {
+        --background: white;
+        color: #000;
+
+        .cancel {
+            margin-left: 2em;
+        }
+
+        .confirm {
+            margin-right: 2em;
+        }
+    }
+}

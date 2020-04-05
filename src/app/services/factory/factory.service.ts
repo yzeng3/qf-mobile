@@ -234,4 +234,17 @@ export class FactoryService {
       }
     );
   }
+
+/**
+ * 获取某店铺的所有可以设计的模型
+ */
+public getPicture(url: string, data: any, successCallback?: Function, failCallback?: Function) {
+  this.http.get(this.config.apiUrl + url, this.httpOptions.headers, data).subscribe(
+    (res: any) => {
+      successCallback(res);
+    }, (err: HttpErrorResponse) => {
+      failCallback(err);
+    }
+  );
+}
 }
