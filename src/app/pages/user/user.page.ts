@@ -30,6 +30,10 @@ export class UserPage implements OnInit {
   constructor(private factoryService: FactoryService, private config: MyConfig, private router: Router) { }
 
   ngOnInit() {
+    const nick = window.localStorage.getItem('nickname');
+    if (nick.length > 0 && nick !== 'undefined') {
+      this.nickname = nick;
+    }
     this.getRecommendProds();
   }
 

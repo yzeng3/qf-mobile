@@ -26,6 +26,7 @@ export class LoginService {
           window.localStorage.setItem('username', userInfo.username);
           window.localStorage.setItem('user_id', userInfo.user_id);
           window.localStorage.setItem('token', userInfo.token);
+          window.localStorage.setItem('nickname', userInfo.nickname);
           successCallback();
         } else {
           failCallback(res);

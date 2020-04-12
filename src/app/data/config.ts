@@ -5,8 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class MyConfig {
 
-    public apiUrl = 'http://localhost:8090/';
-
-    constructor() { }
+    public apiUrl = 'http://47.102.198.182:8080/';
 
 }
