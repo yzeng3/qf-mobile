@@ -4,3 +4,5 @@
 ## 环境
 + nodejs
 + ionic & cordova (安装见ionic官网)
+
+MIT License
